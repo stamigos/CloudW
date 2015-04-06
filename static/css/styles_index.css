@@ -1,0 +1,335 @@
+.user-h {
+  width: 50px;
+  height: 21px;
+  margin-top: 24px;
+  /* border-radius: 50%; */
+  background-size: cover;
+  display: inline-block;
+  background-image: url(../images/header/user.png);
+  background-repeat: no-repeat;
+  float: right;
+}
+
+.user-name-h {
+	
+	display: inline-block;
+	font-weight: 600;
+	margin: 30px 10px 0 0;
+	color: #0076A8;
+	font-size: .8em;
+}
+
+.margin-right-10px {
+
+	margin-right: 10px;
+}
+
+.bot-header-index {
+	
+	height: 320px;
+	padding: 0 20px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(../images/header/back_h.jpg);
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.videos {
+
+	padding: 10px;
+	background-color: #fefefe;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	overflow: hidden;
+}
+
+video {
+
+	width: 620px;
+}
+
+.right-bar {
+	
+	width: 310px;
+	float: right;
+}
+
+.pass-cast {
+
+	margin-top: 10px;
+	text-align: center;
+}
+
+.casting {
+
+	padding: 15px 5px;
+	border-radius: 3px;
+	background-color: #0090C5;
+}
+
+.header-cast {
+
+	color: #fff;
+	font-weight: 600;
+}
+
+.cast {
+	
+	display: inline-block;
+	background-color: #5CB128;
+	overflow: hidden;
+	font-size: .8em;
+	padding: 10px 30px;
+	border-radius: 3px;
+}
+
+	.cast:hover {
+
+		background-color: #53A321;
+	}
+
+input.inp-cast ::-webkit-input-placeholder { color: #bbb; }
+input.inp-cast ::-moz-input-placeholder { color: #bbb; }
+input.inp-cast ::-ms-input-placeholder { color: #bbb; }
+input.inp-cast ::-o-input-placeholder { color: #bbb; }
+input.inp-cast :-moz-input-placeholder { color: #bbb; }
+
+input.inp-cast {
+	
+	margin-top: 1px;
+	vertical-align: top;
+	width: 170px;
+	padding: 10px 0 10px 10px;
+	color: #bbb;
+	border: none;
+	border-radius: 3px;
+}
+
+	input.inp-cast:focus {
+
+		outline: none;
+	}
+
+.header-l {
+	
+	margin-top: 10px;
+	background-color: #0090C5;
+	font-weight: 600;
+	padding: 15px 5px;
+	color: #fff;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+
+.block-l tr {
+
+	background-color: #f1f1f1;
+	cursor: pointer;
+}
+
+	.block-l tr:hover {
+
+		background-color: #ddd;
+
+	}
+
+.block-l td {
+	
+	padding: 10px;
+	border-bottom: 1px dashed #bbb;
+	text-align: center;
+	border-collapse: collapse;
+	font-size: .707em;
+}
+
+.active-drop {
+
+	margin-top: 5px;
+	color: #1D889B;
+	display: none;
+}
+
+.active-tr {
+
+	background-color: #bbb;
+}
+
+.block-l tr td:first-child {
+
+	border-right: 1px dashed #bbb;
+	width: 235px;
+}
+
+.block-l tr td:last-child {
+
+	width:75px;
+}
+
+.video-block {
+
+	display: inline-block;
+}
+
+.videos-container {
+
+	display: inline-block;
+	vertical-align: top;
+}
+
+.date-vb {
+
+	color: #0076A8;
+	margin-top: 5px;
+	font-size: .8em;
+}
+
+.test-task {
+
+	margin-top: 10px;
+}
+
+.header-t {
+
+	padding: 15px 5px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-color: #0076A8;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+
+.body-t {
+	
+	display:none;
+	background-color: #fff;
+	position: relative;
+	margin-top: 5px;
+	padding-bottom: 45px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+	.more-t {
+
+		position: absolute;
+		right: 15px;
+		bottom: 20px;
+		color: #0076A8;
+		text-decoration: underline;
+		font-size: .8em;
+		cursor: pointer;
+	}
+
+		.more-t:hover {
+
+			color: #41B7E9;
+		}
+
+.date-t {
+
+	display: inline-block;
+	background-color: #0076A8;
+	color: #fff;
+	padding: 10px 15px;
+}
+
+.article-t {
+
+	padding: 15px;
+}
+
+.header-a {
+
+	margin: 0;
+	font-size: 1.919em;
+}
+
+.body-a {
+
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+.pic-a {
+
+	display: inline-block;
+	width: 290px;
+	height: 190px;
+	background-color: #bbb;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-right: 20px;
+	float: left;
+}
+
+.text-a {
+	
+	display: inline-block;
+	width: 655px;
+	padding: 5px 0;
+}
+
+.call-back {
+	
+	border-radius: 3px;
+	margin-top: 10px;
+	padding: 15px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+p.header-c {
+
+	font-size: 1.414em;
+	text-align: center;
+}
+
+.body-c {
+	
+	margin-top: 25px;
+	overflow: hidden;
+}
+
+form.form-c {
+	
+	text-align: left;
+	vertical-align: top;
+}
+
+	form.form-c input {
+
+		margin-bottom: 11px;
+	}
+
+
+.textarea-c {
+
+	width: 720px;
+	height: 150px;
+}
+
+.checkboxes-c {
+	
+	margin-right: 40px;
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.b-cb {
+
+	background-color: #5CB128;
+}
+
+	.b-cb:hover {
+
+		background-color: #53A321;
+	}
+
+textarea {
+
+	display: inline-block;
+	float: right;
+}

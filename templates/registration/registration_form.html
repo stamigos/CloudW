@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+    <meta charset="UTF-8">
+	<title>wit-cloud</title>
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/media_queries_greet.css">
+{% endblock %}
+<body>
+{% block header %}
+    {% include 'registration/login.html' %}
+{% endblock %}
+{% block content %}
+
+		<div class="first-time">
+			<div class="non-clicked-b-ft">
+				<p>Вы первый раз посетили этот сайт и хотите получать видео и текстовые задания ? Для этого необходимо</p>
+				<div class="button b-ft">Создать личный кабинет</div>
+			</div>
+			<div class="clicked-b-ft">
+				<p class="title-c-b-ft">Если Вы уже учились на саммите 4 измерение, создайте свой личный кабинет, чтобы продолжить получать текстовые и видео уроки !</p>
+                    <form action="/greets/" method="post" class="greet-form">{% csrf_token %}
+                        {% for field in form %}
+						   {{ field }}
+                        {% endfor %}
+                        {% for sup_field in supplement_form %}
+                            {{ sup_field }}
+                        {% endfor %}
+                        <div class="block"></div>
+						 <input type="submit" value="Создать личный кабинет"  class="submit-gf">
+					</form>
+
+			</div>
+		</div>
+		<div class="contacts">
+			<p class="info-c">Подробную информацию о саммите вы можете узнать по телефону</p>
+			<div class="p-numbers">
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+			</div>
+			<p class="info-c">Или отправив нам сообщение по e-mail</p>
+			<p class="mail">@testmail.gmail.com</p>
+		</div>
+{% endblock %}
+{% block footer %}
+    <div class="footer">copyright &copy 1998-2013 test.org.ua. Все права защищены</div>
+{% endblock %}
+{% block additional %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="{{ STATIC_URL }}js/greets.js"></script>
+	<script type="text/javascript">
+
+     (function ($) {
+         $.support.placeholder = ('placeholder' in document.createElement('input'));
+     })(jQuery);
+
+
+     //fix for IE7 and IE8
+     $(function () {
+         if (!$.support.placeholder) {
+             $("[placeholder]").focus(function () {
+                 if ($(this).val() == $(this).attr("placeholder")) $(this).val("");
+             }).blur(function () {
+                 if ($(this).val() == "") $(this).val($(this).attr("placeholder"));
+             }).blur();
+
+             $("[placeholder]").parents("form").submit(function () {
+                 $(this).find('[placeholder]').each(function() {
+                     if ($(this).val() == $(this).attr("placeholder")) {
+                         $(this).val("");
+                     }
+                 });
+             });
+         }
+     });
+ </script>
+{% endblock %}
+
+</body>
+</html>

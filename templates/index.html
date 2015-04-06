@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+	<meta charset="UTF-8">
+	<title>main</title>
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/styles_index.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/presets.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.jscrollpane.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/media_queries_index.css">
+{% endblock %}
+<body>
+{% block header %}
+		<header>
+			<div class="top-header">
+				<a href="#main">
+					<i class="logo-h"></i>
+				</a>
+				<div class="propagation">
+							<p class="user-name-h">{{ user_fullname }}</p>
+							<i class="user-h non-active-h"></i>
+				</div>
+			</div>
+			<div class="bot-header-index">
+				<ul class="drop-down">
+					<li>
+						<a href="{% url 'index' %}">Личный Кабинет</a>
+					</li>
+					<li>
+						<a href="{% url 'profile_settings' %}">Настройка Профиля</a>
+					</li>
+					<li>
+						<a href="{% url 'logout' %}">Выйти</a>
+					</li>
+				</ul>
+				<div class="head-content">
+					<div class="title-bh">Облако Свидетелей</div>
+					<div class="tr-bh"></div>
+				</div>
+			</div>
+		</header>
+{% endblock %}
+{% block content %}
+		<div class="videos">
+		<div class="right-bar">
+				<div class="casting">
+					<div class="header-cast">Приватный эфир</div>
+					<!--<form action="post.php" method="post" class="pass-cast">
+						<input type="password" placeholder="Пароль" class="inp-cast">
+						<div class="button cast">Войти</div>
+					</form>-->
+                   <a href="{% url 'private' %}"><div class="button cast">Войти</div></a>
+				</div>
+				<div class="lessons">
+					<div class="header-l">
+						Видео Уроки
+					</div>
+					<div class="block-l scroll-pane">
+						<table cellspacing="0" class="table">
+							<tr>
+								<td>
+									<p>Владимир Мунтян. 4 Измерение</p>
+									<p class="active-drop">Это видео рассказывает о том, как нужно следить за собой и своими поступками</p>
+								</td>
+								<td>05.01.15</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Владимир Мунтян. 4 Измерение</p>
+									<p class="active-drop">Это видео рассказывает о том, как нужно следить за собой и своими поступками</p>
+								</td>
+								<td>05.01.15</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Владимир Мунтян. 4 Измерение</p>
+									<p class="active-drop">Это видео рассказывает о том, как нужно следить за собой и своими поступками</p>
+								</td>
+								<td>05.01.15</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Владимир Мунтян. 4 Измерение</p>
+									<p class="active-drop">Это видео рассказывает о том, как нужно следить за собой и своими поступками</p>
+								</td>
+								<td>05.01.15</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Владимир Мунтян. 4 Измерение</p>
+									<p class="active-drop">Это видео рассказывает о том, как нужно следить за собой и своими поступками</p>
+								</td>
+								<td>05.01.15</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Владимир Мунтян. 4 Измерение</p>
+									<p class="active-drop">Это видео рассказывает о том, как нужно следить за собой и своими поступками</p>
+								</td>
+								<td>05.01.15</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Владимир Мунтян. 4 Измерение</p>
+									<p class="active-drop">Это видео рассказывает о том, как нужно следить за собой и своими поступками</p>
+								</td>
+								<td>05.01.15</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="video-block">
+				<div class="videos-container">
+					<video controls="controls">
+						 <source src="video/1.mp4" type="video/mp4">
+					</video>
+					<video controls="controls">
+						 <source src="video/2.mp4" type="video/mp4">
+					</video>
+					<video controls="controls">
+						 <source src="video/3.mp4" type="video/mp4">
+					</video>
+					<video controls="controls">
+						 <source src="video/4.mp4" type="video/mp4">
+					</video>
+					<video controls="controls">
+						 <source src="video/5.mp4" type="video/mp4">
+					</video>
+					<video controls="controls">
+						 <source src="video/6.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div class="date-vb">31 марта 2015 года в 00:00</div>
+			</div>
+		</div>
+		<div class="test-task">
+			<div class="header-t">Тестовое Задание</div>
+			<div class="bodies">
+				<div class="body-t">
+					<div class="date-t">31.03.2015</div>
+					<div class="article-t">
+						<p class="header-a">Это видео рассказывает о том, как важно следить за собой и своими поступками</p>
+						<div class="body-a">
+							<div class="pic-a"></div>
+							<div class="text-a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime sit, asperiores. Id voluptatum rerum optio atque, eaque quisquam ipsa illo, consectetur enim, odio, facilis suscipit. Culpa officiis quas, perspiciatis nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita odio quae cupiditate, perferendis nihil reiciendis consectetur fuga facere sequi cumque qui vitae earum doloremque ab fugiat, magnam officiis consequuntur necessitatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus culpa sint quo, impedit modi nemo ipsam neque rerum ad, officia quos dolor ullam doloribus perspiciatis perferendis inventore est quas nobis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime sit, asperiores. Id voluptatum rerum optio atque, eaque quisquam ipsa illo, consectetur enim, odio, facilis suscipit. Culpa officiis quas, perspiciatis nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita odio quae cupiditate, perferendis nihil reiciendis consectetur fuga facere sequi cumque qui vitae earum doloremque ab fugiat, magnam officiis consequuntur necessitatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus culpa sint quo, impedit modi nemo ipsam neque rerum ad, officia quos dolor ullam doloribus perspiciatis perferendis inventore est quas nobis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime sit, asperiores. Id voluptatum rerum optio atque, eaque quisquam ipsa illo, consectetur enim, odio, facilis suscipit. Culpa officiis quas, perspiciatis nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita odio quae cupiditate, perferendis nihil reiciendis consectetur fuga facere sequi cumque qui vitae earum doloremque ab fugiat, magnam officiis consequuntur necessitatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus culpa sint quo, impedit modi nemo ipsam neque rerum ad, officia quos dolor ullam doloribus perspiciatis perferendis inventore est quas nobis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime sit, asperiores. Id voluptatum rerum optio atque, eaque quisquam ipsa illo, consectetur enim, odio, facilis suscipit. Culpa officiis quas, perspiciatis nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita odio quae cupiditate, perferendis nihil reiciendis consectetur fuga facere sequi cumque qui vitae earum doloremque ab fugiat, magnam officiis consequuntur necessitatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus culpa sint quo, impedit modi nemo ipsam neque rerum ad, officia quos dolor ullam doloribus perspiciatis perferendis inventore est quas nobis! </div>
+						</div>
+					</div>
+					<div class="more-t">Читать далее</div>
+				</div>
+				<div class="body-t">
+					<div class="date-t">1.04.2015</div>
+					<div class="article-t">
+						<p class="header-a">Это видео рассказывает о том, что скрипт работает</p>
+						<div class="body-a">
+							<div class="pic-a"></div>
+							<div class="text-a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem minus fugit esse beatae provident mollitia sint ipsam? Tenetur, temporibus. Animi voluptas, dignissimos repudiandae! Perferendis magnam molestiae, accusantium cupiditate repellat repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quaerat sapiente atque, et ad, obcaecati! Cum obcaecati dicta voluptas asperiores, blanditiis possimus molestias, aperiam minima ex labore fuga rerum rem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, quos maiores voluptas quo, sequi consequuntur placeat possimus cum soluta porro ea eius quam consequatur ad doloremque. Sequi nobis adipisci labore.</div>
+						</div>
+					</div>
+					<div class="more-t">Читать далее</div>
+				</div>
+			</div>
+		</div>
+		<div class="call-back">
+			<p class="header-c">Здесь Вы можете оставить свою нужду или запрос</p>
+			<div class="body-c">
+				<textarea name="" id="" placeholder="Введите сюда текст..." class="textarea-c"></textarea>
+				<form action="post.php" method="post" class="form-c">
+					<div class="checkboxes-c">
+						<div class="inp-wrap-cs">
+							<input id="lessons-r" type="radio" name="#">
+							<label for="lessons-r">Вопрос по урокам</label>
+						</div>
+						<div class="inp-wrap-cs">
+							<input id="need-r" type="radio" name="#">
+							<label for="need-r">Нужда</label>
+						</div>
+						<div class="inp-wrap-cs">
+							<input id="thanks-r" type="radio" name="#">
+							<label for="thanks-r">Благодарение</label>
+						</div>
+						<div class="inp-wrap-cs">
+							<input id="wit-r" type="radio" name="#">
+							<label for="wit-r">Свидетельства</label>
+						</div>
+						<div class="button b-cb">Отправить</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="contacts margin-top-10px">
+			<p class="info-c">Подробную информацию о саммите вы можете узнать по телефону</p>
+			<div class="p-numbers">
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+			</div>
+			<p class="info-c">Или отправив нам сообщение по e-mail</p>
+			<p class="mail">@testmail.gmail.com</p>
+		</div>
+{% endblock %}
+{% block footer %}
+    <div class="footer">copyright &copy 1998-2013 test.org.ua. Все права защищены</div>
+{% endblock %}
+{% block additional %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="{{ STATIC_URL }}js/main.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.jscrollpane.min.js"></script>
+	<script src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
+	<script src="http://api.html5media.info/1.1.6/html5media.min.js"></script>
+		<script type="text/javascript">
+
+     (function ($) {
+         $.support.placeholder = ('placeholder' in document.createElement('input'));
+     })(jQuery);
+
+
+     //fix for IE7 and IE8
+     $(function () {
+         if (!$.support.placeholder) {
+             $("[placeholder]").focus(function () {
+                 if ($(this).val() == $(this).attr("placeholder")) $(this).val("");
+             }).blur(function () {
+                 if ($(this).val() == "") $(this).val($(this).attr("placeholder"));
+             }).blur();
+
+             $("[placeholder]").parents("form").submit(function () {
+                 $(this).find('[placeholder]').each(function() {
+                     if ($(this).val() == $(this).attr("placeholder")) {
+                         $(this).val("");
+                     }
+                 });
+             });
+         }
+     });
+ </script>	
+<script type="text/javascript">
+     
+$(function()
+{
+	$('.scroll-pane').jScrollPane();
+});
+     
+</script>
+{% endblock %}
+
+</body>
+</html>

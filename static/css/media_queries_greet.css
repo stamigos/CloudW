@@ -1,0 +1,114 @@
+@media screen and (max-width: 1000px) {
+
+	.wrapper-1000 {
+
+		width: 100%;
+	}
+
+
+}
+
+@media screen and (max-width: 920px) {
+
+	html,body {
+
+		font-size: 14px;
+	}
+
+	.bot-header {
+
+		height: 250px;
+	}
+
+	.head-content {
+
+		margin-top: 50px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+
+	.first-time {
+
+		padding: 20px;
+	}
+
+	.contacts {
+
+		padding: 15px 20px;
+	}
+
+	.bot-header {
+
+		height: 200px;
+	}
+
+	.head-content {
+
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 625px) {
+
+	.title-bh {
+
+		font-size: 3em;
+	}
+
+	.head-content {
+
+		margin-top: 5px;
+	}
+
+	.inputs-bh input {
+
+		display: block;
+		width: 220px;
+		margin: 0 auto 5px auto;
+		text-align: center;
+	}
+
+	.b-bh {
+
+		display: block;
+		margin: 0 auto;
+		width: 230px;
+		padding: 15px 0;
+	}
+
+	.bot-header {
+
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	
+	p.title-c-b-ft {
+
+		font-size: 1em;
+		font-weight: 600;
+	}
+
+	.bot-header {
+		
+		padding: 20px;
+		height:auto;
+	}
+}
+
+@media screen and (max-width: 550px) {
+
+	form.greet-form input {
+		
+		display: block;
+		width: 200px;
+		margin: 0 auto 5px auto;
+	}
+
+	.submit-gf {
+
+		font-size: .75em;
+	}
+}

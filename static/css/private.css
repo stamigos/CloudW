@@ -1,0 +1,102 @@
+.chat {
+
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 10px;
+	overflow: hidden;
+}
+
+
+.header-ct {
+
+	background-color: #228FC2;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.users-messages-ct {
+
+	margin: 10px auto 0 auto;
+	display: block;
+	border: 1px solid #eee;
+	height: 150px;
+	padding: 10px 0 10px 10px;
+	overflow-y: scroll;
+}
+
+textarea.inp-ct {
+	
+	margin: 10px auto 0 auto;
+	display: block;
+	width: 266px;
+	border: 1px solid #eee;
+	height: 50px;
+	padding: 10px;
+	resize: none;
+}
+
+.send-ct {
+	
+	margin-top: 10px;
+	float: right;
+	display: inline-block;
+	background-color: #228FC2;
+	border-radius: 3px;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 5px 30px;
+	cursor: pointer;
+}
+
+	.send-ct:hover {
+
+		background-color: #0083B2;
+	}
+
+.msg-ct {
+
+	margin-bottom: 10px;
+}
+
+.nickname-ct {
+	
+	margin-right: 5px;
+	display: inline-block;
+	color: #228FC2;
+	font-weight: 600;
+	font-size: .8em;
+}
+
+.date-ct {
+	
+	display: inline-block;
+	color: #ccc;
+	font-style: italic;
+	font-size: .7em;
+}
+
+.msg-cont-ct {
+
+	color: #444;
+	font-size: .9em;
+}
+
+a.to-pc {
+	
+	margin-bottom: 10px;
+	display: block;
+	color: #228FC2;
+	text-decoration: underline;
+	font-size: .8em;
+	cursor: pointer;
+}
+
+	a.to-pc:hover {
+		
+		color: #5CC9FC;
+	}

@@ -1,0 +1,246 @@
+@media screen and (max-width: 1000px) {
+
+	.wrapper-1000 {
+
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 960px) {
+
+	.right-bar {
+
+		display: block;
+		float: none;
+		width: 100%;
+	}
+
+	input.inp-cast {
+
+		width:60%;
+	}
+
+	.video-block {
+
+		width: 100%;
+		margin-top: 10px;
+		text-align: center;
+	}
+
+	video {
+		
+		width: 800px;
+	}
+
+	table {
+
+		width: 100%;
+	}
+
+	.block-l tr td:first-child {
+
+	border-right: 1px dashed #bbb;
+	width: 70%;
+	}
+
+	.block-l tr td:last-child {
+
+		width:30%;
+	}
+
+	.header-a {
+
+		font-size: 1.414em;
+	}
+
+	.text-a {
+
+		width: 60%;
+	}
+
+	textarea.textarea-c {
+
+		width: 70%;
+	}
+
+	textarea.inp-ct {
+
+		width: 97%;
+		margin: 5px auto 0 auto;
+	}
+}
+
+@media screen and (max-width: 920px) {
+
+	.bot-header-index {
+
+		height: 250px;
+	}
+
+	.title-bh {
+		
+		font-size: 3.5em;
+	}
+
+	.head-content {
+
+		margin-top: 50px;
+	}
+}
+
+@media screen and (max-width: 851px) {
+
+	.pic-a {
+
+		float: none;
+		display: block;
+		margin: 0 auto;
+		width: 500px;
+		height: 250px;
+	}
+
+	.text-a {
+		
+		display: block;
+		margin: 10px auto 0 auto;
+		width: 90%;
+		text-align: justify;
+	}
+}
+
+@media screen and (max-width: 800px) {
+
+	video {
+		
+		width: 570px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+
+	.bot-header-index {
+		
+		height: 200px;
+	}
+
+	.title-bh {
+
+		font-size: 2.5em;
+	}
+}
+
+@media screen and (max-width: 670px) {
+
+	.checkboxes-c {
+
+		display: block;
+		margin: 10px auto 0 auto;
+		text-align:center;
+	}
+
+	.inp-wrap-cs {
+
+		display: inline-block;
+		margin-right: 7.5px;
+	}
+
+	.b-cb {
+
+		width: 200px;
+		margin: 0 auto;
+	}
+
+	textarea.textarea-c {
+		
+		width: 90%;
+		float: none;
+		display: block;
+		margin: 0 auto !important;
+	}
+}
+
+@media screen and (max-width: 570px) {
+
+	.pic-a {
+
+		width: 300px;
+		height: 150px;
+	}
+	
+	.bot-header-index {
+
+		height: 250px;
+	}
+
+	.title-bh {
+
+		font-size: 3em;
+	}
+
+	.head-content {
+
+		margin-top: 80px;
+	}
+
+	video {
+		
+		width: 470px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+
+	i.logo-h {
+
+		display: none;
+	}
+}
+
+@media screen and (max-width: 475px) {
+
+	.header-a {
+
+		font-size: 1.2em;
+	}
+
+	.text-a {
+
+		font-size: .85em;
+	}
+
+	.head-content {
+
+		margin-top: 40px;
+	}
+
+	video {
+		
+		width: 330px;
+	}
+}
+
+@media screen and (max-width: 330px) {
+
+	p.header-c {
+
+		font-size: 1.2em;
+	}
+
+	input.inp-cast {
+
+		width:50%;
+	}
+
+	video {
+		
+		width: 270px;
+	}
+}
+
+@media screen and (max-width: 310px) {
+
+	.title-bh {
+
+		font-size: 2.5em;
+	}
+}

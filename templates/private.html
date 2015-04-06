@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>private</title>
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/styles_index.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/presets.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/private.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.jscrollpane.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/media_queries_private.css">
+</head>
+<body>
+	<div class="wrapper-1000">
+		<header>
+			<div class="top-header">
+				<a href="#main">
+					<i class="logo-h"></i>
+				</a>
+				<div class="propagation">
+							<p class="user-name-h">{{ user_fullname }}</p>
+							<i class="user-h non-active-h"></i>
+				</div>
+			</div>
+			<div class="bot-header-index">
+				<ul class="drop-down">
+					<li>
+						<a href="{% url 'index' %}">Личный Кабинет</a>
+					</li>					
+					<li>
+						<a href="{% url 'profile_settings' %}">Настройка Профиля</a>
+					</li>
+					<li>
+						<a href="{% url 'logout' %}">Выйти</a>
+					</li>
+				</ul>
+				<div class="head-content">
+					<div class="title-bh">Облако Свидетелей</div>
+					<div class="tr-bh"></div>
+				</div>
+			</div>
+		</header>
+		<div class="videos">
+			<a href="#" class="to-pc">Личный кабинет</a>
+			<div class="video-block">
+				<div class="videos-container">
+                    <video id="my_video_1" class="video-js vjs-default-skin" controls="controls"
+  preload="auto" width="640" height="264" data-setup='{ "techOrder": ["flash"] }'>
+  <source src="rtmp://stream.smcloud.net/live2/best/best_720p" type="rtmp/mp4">
+</video>
+
+      <p>Source from: <a href="http://support.akamai.com/flash/">http://support.akamai.com/flash/</a></p>
+					<video controls="controls" autoplay="autoplay">
+						 <source src="rtmp://stream.smcloud.net/live2/best/best_720p">
+					</video>
+				</div>
+				<div class="date-vb">
+					Cейчас смотрят: 
+					<span>274</span>
+				</div>
+			</div>
+			<div class="right-bar">
+				<div class="chat">
+					<div class="header-ct">Чат</div>
+					<div class="body-ct">
+						<div id="sp-2">
+							<div class="users-messages-ct">
+								<div class="msg-ct">
+									<div class="nickname-ct">foo_bar</div>
+									<div class="date-ct">2 Апреля в 13:28</div>
+									<div class="msg-cont-ct">Это сообщение, которое будет отображаться в окне чата.</div>
+								</div>
+								<div class="msg-ct">
+									<div class="nickname-ct">foo_bar</div>
+									<div class="date-ct">2 Апреля в 13:28</div>
+									<div class="msg-cont-ct">Это сообщение, которое будет отображаться в окне чата.</div>
+								</div>
+								<div class="msg-ct">
+									<div class="nickname-ct">foo_bar</div>
+									<div class="date-ct">2 Апреля в 13:28</div>
+									<div class="msg-cont-ct">Это сообщение, которое будет отображаться в окне чата.</div>
+								</div>
+							</div>
+						</div>
+						<textarea name="" id="" placeholder="Нажмите кнопку 'Отправить' или Enter, чтобы отправить сообщение" class="inp-ct"></textarea>
+						<div class="send-ct">Отправить</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="call-back">
+			<p class="header-c">Здесь Вы можете оставить свою нужду или запрос</p>
+			<div class="body-c">
+				<form action="post.php" method="post" class="form-c">
+					<textarea name="" id="" placeholder="Введите сюда текст..." class="textarea-c"></textarea>
+					<div class="checkboxes-c">
+						<div class="inp-wrap-cs">
+							<input id="lessons-r" type="radio" name="#">
+							<label for="lessons-r">Вопрос по урокам</label>
+						</div>
+						<div class="inp-wrap-cs">
+							<input id="need-r" type="radio" name="#">
+							<label for="need-r">Нужда</label>
+						</div>
+						<div class="inp-wrap-cs">
+							<input id="thanks-r" type="radio" name="#">
+							<label for="thanks-r">Благодарение</label>
+						</div>
+						<div class="inp-wrap-cs">
+							<input id="wit-r" type="radio" name="#">
+							<label for="wit-r">Свидетельства</label>
+						</div>
+						<div class="button b-cb">Отправить</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="contacts margin-top-10px">
+			<p class="info-c">Подробную информацию о саммите вы можете узнать по телефону</p>
+			<div class="p-numbers">
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+				<div class="number-c">
+					<div class="icon-p"></div>
+					+38 097 286 10 29
+				</div>
+			</div>
+			<p class="info-c">Или отправив нам сообщение по e-mail</p>
+			<p class="mail">@testmail.gmail.com</p>
+		</div>
+		<div class="footer">copyright &copy 1998-2013 test.org.ua. Все права защищены</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="{{ STATIC_URL }}js/private.js"></script>
+		<script type="text/javascript">
+
+     (function ($) {
+         $.support.placeholder = ('placeholder' in document.createElement('input'));
+     })(jQuery);
+
+
+     //fix for IE7 and IE8
+     $(function () {
+         if (!$.support.placeholder) {
+             $("[placeholder]").focus(function () {
+                 if ($(this).val() == $(this).attr("placeholder")) $(this).val("");
+             }).blur(function () {
+                 if ($(this).val() == "") $(this).val($(this).attr("placeholder"));
+             }).blur();
+
+             $("[placeholder]").parents("form").submit(function () {
+                 $(this).find('[placeholder]').each(function() {
+                     if ($(this).val() == $(this).attr("placeholder")) {
+                         $(this).val("");
+                     }
+                 });
+             });
+         }
+     });
+ </script>	
+</body>
+</html>

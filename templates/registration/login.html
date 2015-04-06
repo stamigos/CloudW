@@ -1,0 +1,21 @@
+    <header>
+			<div class="top-header">
+				<i class="logo-h"></i>
+			</div>
+			<div class="bot-header">
+				<div class="head-content">
+					<div class="title-bh">Облако Свидетелей</div>
+					<div class="tr-bh"></div>
+					<form action="/registration/login/" method="post" class="inputs-bh">
+						{% csrf_token %}
+
+						{% for field in login_form %}
+							{{ field }}
+							{% if field.help_text %}<div class="clearfix">{{ field.help_text }}</div>{% endif %}
+							{% if field.errors %}<div class="myerrors clearfix">{{ field.errors }}</div>{% endif %}
+						{% endfor %}
+						<input type="submit" value="Войти в личный кабинет" class="b-bh">
+					</form>
+				</div>
+			</div>
+		</header>
