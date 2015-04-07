@@ -161,3 +161,8 @@ MULTIUPLOADER_FORMS_SETTINGS = {
         'AUTO_UPLOAD': True,
     },
     }
+
+try:
+    from production_settings import *
+except ImportError as e:
+    pass
