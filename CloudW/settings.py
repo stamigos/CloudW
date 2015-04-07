@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'supplement_registration',
     'privatebroadcast',
     'multiuploader',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
