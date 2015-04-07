@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/presets.css">
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.jscrollpane.css">
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/media_queries_index.css">
+    <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
 {% endblock %}
 <body>
 <script>
@@ -114,8 +115,17 @@ function run(link, player){
 			</div>
 			<div class="video-block">
 				<div class="videos-container">
-					<video id="privatePlayer" controls="controls">
+					<!--<video id="privatePlayer" controls="controls">
 						 <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ tasks.0.video.id }}/" type="video/mp4">
+					</video>-->
+                    <video id="example_video_1" class="video-js vjs-default-skin"
+					  controls preload="auto" width="640" height="264"
+					  poster="http://video-js.zencoder.com/oceans-clip.png"
+					  data-setup='{"example_option":true}'>
+					 <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ tasks.0.video.id }}/" type="video/mp4" />
+					<!-- <source src="rtmp://stream.smcloud.net/live2/best/best_720p" type='video/webm' />
+					 <source src="rtmp://stream.smcloud.net/live2/best/best_720p" type='video/ogg' />-->
+					 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 					</video>
 				</div>
 				<div class="date-vb">{{ tasks.0.video.upload_date }}</div>
@@ -211,7 +221,7 @@ function run(link, player){
 	<script src="{{ STATIC_URL }}js/main.js"></script>
 	<script src="{{ STATIC_URL }}js/jquery.jscrollpane.min.js"></script>
 	<script src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
-
+    <script src="//vjs.zencdn.net/4.12/video.js"></script>
 		<script type="text/javascript">
 
      (function ($) {
