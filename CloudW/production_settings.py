@@ -1,6 +1,6 @@
-#production settings
-import os
-from settings import BASE_DIR
+# production settings
+
+ALLOWED_HOSTS = ['clw.com.ua']
 
 DATABASES = {
     'default': {
