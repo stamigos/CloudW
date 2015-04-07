@@ -14,22 +14,7 @@
     {% include 'registration/login.html' %}
 {% endblock %}
 {% block content %}
-{% load url from future %}
-{% load i18n %}
 
-{% block title %}{% trans 'Registration' %}{% endblock %}
-
-{% block content_title %}<h1>{% trans 'Registration' %}</h1>{% endblock %}
-
-{% block contents %}
-{{ block.super }}
-<p>{% trans 'Please fill the following fields to create your registration' %}</p>
-<form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    {{ supplement_form.as_p }}
-    <p><input type="submit" value="{% trans 'Register' %}"></p>
-</form>
-{% endblock %}
 		<div class="first-time">
 			<div class="non-clicked-b-ft">
 				<p>Вы первый раз посетили этот сайт и хотите получать видео и текстовые задания ? Для этого необходимо</p>
@@ -37,16 +22,16 @@
 			</div>
 			<div class="clicked-b-ft">
 				<p class="title-c-b-ft">Если Вы уже учились на саммите 4 измерение, создайте свой личный кабинет, чтобы продолжить получать текстовые и видео уроки !</p>
-                 <!--   <form action="" method="post" class="greet-form">{% csrf_token %}
-
+                    <form action="" method="post" class="greet-form">{% csrf_token %}
+                        {% for field in form %}
+                            {{ field }}
+                        {% endfor %}
+                        {% for sup_field in supplement_form %}
+                            {{ sup_field }}
+                        {% endfor %}
                         <div class="block"></div>
-						 <input type="submit" value="{% trans 'Register' %}" class="submit-gf">
-					</form>-->
-                <form action="" method="post">{% csrf_token %}
-					{{ form.as_p }}
-					{{ supplement_form.as_p }}
-					<p><input type="submit" value="{% trans 'Register' %}"></p>
-				</form>
+						 <input type="submit" value="Создать личный кабинет" class="submit-gf">
+					</form>
 
 			</div>
 		</div>
