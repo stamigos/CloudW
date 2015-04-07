@@ -42,6 +42,8 @@ INSTALLED_APPS = (
     'mailer',
     'supplement_registration',
     'south',
+    'privatebroadcast',
+    'multiuploader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,6 +64,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages",
     'supplement_registration.context_processors.include_login_form',
     'supplement_registration.context_processors.user',
+    'multiuploader.context_processors.booleans',
 )
 
 ROOT_URLCONF = 'CloudW.urls'
@@ -110,8 +113,52 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
 
+MULTIUPLOADER_FILES_FOLDER = 'multiuploader'
+
+MULTIUPLOADER_FILE_EXPIRATION_TIME = 3600
+
 REGISTRATION_SUPPLEMENT_CLASS = 'supplement_registration.models.MyRegistrationSupplement'
 
 ACCOUNT_ACTIVATION_DAYS = 7
 EMAIL_BACKEND = 'mailer.backend.DbBackend'
 LOGIN_REDIRECT_URL = '/'
+
+MULTIUPLOADER_FORMS_SETTINGS = {
+    'default': {
+        'FILE_TYPES': ["txt", "zip", "jpg", "jpeg", "flv", "png"],
+        'CONTENT_TYPES': [
+                'image/jpeg',
+                'image/png',
+                'application/msword',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                'application/vnd.ms-excel',
+                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                'application/vnd.ms-powerpoint',
+                'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+                'application/vnd.oasis.opendocument.text',
+                'application/vnd.oasis.opendocument.spreadsheet',
+                'application/vnd.oasis.opendocument.presentation',
+                'text/plain',
+                'text/rtf',
+                ],
+        'MAX_FILE_SIZE': 10485760,
+        'MAX_FILE_NUMBER': 5,
+        'AUTO_UPLOAD': True,
+    },
+
+    'video': {
+        'FILE_TYPES': ['flv', 'mpg', 'mpeg', 'mp4' ,'avi', 'mkv', 'ogg', 'wmv', 'mov', 'webm' ],
+        'CONTENT_TYPES' : [
+            'video/mpeg',
+            'video/mp4',
+            'video/ogg',
+            'video/quicktime',
+            'video/webm',
+            'video/x-ms-wmv',
+            'video/x-flv',
+            ],
+        'MAX_FILE_SIZE': 10485760,
+        'MAX_FILE_NUMBER':5,
+        'AUTO_UPLOAD': True,
+    },
+    }

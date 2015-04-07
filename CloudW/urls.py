@@ -15,6 +15,8 @@ urlpatterns = patterns('',
     url(r'^profiles/logout/$', 'supplement_registration.views.logout_view', name="logout"),
     url(r'^person_card/$', 'supplement_registration.views.profile_settings', name="profile_settings"),
     url(r'^private/$', 'privatebroadcast.views.private', name="private"),
+    url(r'^your_uploads/', include('multiuploader.urls')),
+    url('^uploader/$', 'privatebroadcast.views.uploader_view', name='uploader_view'),
     # Add django-inspectional-registration urls. The urls also define
     # Login, Logout and password_change or lot more for handle
     # registration.
