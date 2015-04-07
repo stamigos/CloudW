@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/private.css">
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery.jscrollpane.css">
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/media_queries_private.css">
+    <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
 </head>
 <body>
 	<div class="wrapper-1000">
@@ -41,11 +42,20 @@
 			</div>
 		</header>
 		<div class="videos">
-			<a href="#" class="to-pc">Личный кабинет</a>
+			<a href="{% url 'index' %}" class="to-pc">Личный кабинет</a>
 			<div class="video-block">
 				<div class="videos-container">
-					<video controls="controls" autoplay="autoplay">
+				<!--	<video controls="controls" autoplay="autoplay">
 						 <source src="rtmp://stream.smcloud.net/live2/best/best_720p">
+					</video>-->
+                    <video id="example_video_1" class="video-js vjs-default-skin"
+					  controls preload="auto" width="640" height="264"
+					  poster="http://video-js.zencoder.com/oceans-clip.png"
+					  data-setup='{"example_option":true}'>
+					 <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+					 <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+					 <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+					 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 					</video>
 				</div>
 				<div class="date-vb">
@@ -140,6 +150,7 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="{{ STATIC_URL }}js/private.js"></script>
+    <script src="//vjs.zencdn.net/4.12/video.js"></script>
 		<script type="text/javascript">
 
      (function ($) {
