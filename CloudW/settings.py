@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+import os.path
+APP_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -44,6 +46,7 @@ INSTALLED_APPS = (
     'privatebroadcast',
     'multiuploader',
     'south',
+    'gunicorn',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,15 +108,21 @@ STATIC_ROOT = ''
 
 STATIC_URL = '/static/'
 
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static'),
+#)
+
+#TEMPLATE_DIRS = (
+#    os.path.join(BASE_DIR,  'templates'),
+#)
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    APP_ROOT + '/htdocs/static',
 )
-
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
+    APP_ROOT + '/templates'
 )
 
-MULTIUPLOADER_FILES_FOLDER = 'static'
+MULTIUPLOADER_FILES_FOLDER = 'htdocs'
 
 MULTIUPLOADER_FILE_EXPIRATION_TIME = 3600
 
