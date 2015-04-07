@@ -106,7 +106,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(APP_ROOT, '../htdocs/')
 
-STATIC_URL = '/htdocs/'
+STATIC_URL = '../htdocs/'
 
 #STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),
@@ -116,7 +116,7 @@ STATIC_URL = '/htdocs/'
 #    os.path.join(BASE_DIR,  'templates'),
 #)
 STATICFILES_DIRS = (
-    APP_ROOT + '../htdocs/static',
+    APP_ROOT + '/htdocs/static',
 )
 TEMPLATE_DIRS = (
     APP_ROOT + '/templates'

@@ -3,6 +3,8 @@ from supplement_registration.forms import MyRegistrationFormUniqueEmail, MyRegis
 from supplement_registration.views import logout_view
 from registration.views import RegistrationView
 from django.contrib import admin
+from django.conf.urls.static import static
+import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -24,4 +26,5 @@ urlpatterns = patterns('',
         name='registration_register'),
     url(r'^registration/logout/$', 'supplement_registration.views.logout_view', name='auth_logout'),
     url('^registration/', include('registration.urls')),
-)
+
+) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
