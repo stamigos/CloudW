@@ -41,7 +41,6 @@ INSTALLED_APPS = (
    # 'registration.supplements.default',
     'mailer',
     'supplement_registration',
-    'south',
     'privatebroadcast',
     'multiuploader',
 )
@@ -113,7 +112,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
 
-MULTIUPLOADER_FILES_FOLDER = 'multiuploader'
+MULTIUPLOADER_FILES_FOLDER = 'static'
 
 MULTIUPLOADER_FILE_EXPIRATION_TIME = 3600
 

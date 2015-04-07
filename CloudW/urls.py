@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from supplement_registration.forms import MyRegistrationFormUniqueEmail
+from supplement_registration.forms import MyRegistrationFormUniqueEmail, MyRegistrationForm
 from supplement_registration.views import logout_view
 from registration.views import RegistrationView
 from django.contrib import admin

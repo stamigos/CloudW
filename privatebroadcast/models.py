@@ -3,8 +3,11 @@ from django.db import models
 from multiuploader.models import MultiuploaderFile
 
 
-class Task(MultiuploaderFile):
+#TODO: add DateField() for tasks
+class Task(models.Model):
     video = models.OneToOneField(MultiuploaderFile, blank=True)
     title = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to='media/')
+
+

@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load url from future %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 {% block head %}
@@ -20,15 +22,15 @@
 			</div>
 			<div class="clicked-b-ft">
 				<p class="title-c-b-ft">Если Вы уже учились на саммите 4 измерение, создайте свой личный кабинет, чтобы продолжить получать текстовые и видео уроки !</p>
-                    <form action="/greets/" method="post" class="greet-form">{% csrf_token %}
+                    <form action="" method="post" class="greet-form">{% csrf_token %}
                         {% for field in form %}
-						   {{ field }}
+                            {{ field }}
                         {% endfor %}
                         {% for sup_field in supplement_form %}
                             {{ sup_field }}
                         {% endfor %}
                         <div class="block"></div>
-						 <input type="submit" value="Создать личный кабинет"  class="submit-gf">
+						 <input type="submit" value="{% trans 'Register' %}" class="submit-gf">
 					</form>
 
 			</div>
