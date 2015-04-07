@@ -1,7 +1,7 @@
 # production settings
 
 ALLOWED_HOSTS = ['clw.com.ua']
-DEBUG = False
+#DEBUG = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
