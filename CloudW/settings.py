@@ -106,7 +106,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(APP_ROOT, '../htdocs/')
 
-STATIC_URL = '/htdocs/static/'
+STATIC_URL = '/htdocs/'
 
 #STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),
