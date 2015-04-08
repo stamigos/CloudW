@@ -14,25 +14,29 @@ def profile_settings(request, template_name="person_card.html"):
     user = ''
     employee = ''
     if request.POST:
-        user = User.objects.get(pk=request.user.id)
-        user.username = request.POST.get('user')
-        user.email = request.POST.get('email')
-        user.save()
-
         employee = MyRegistrationSupplement.objects.get(pk=request.user.pk)
         employee.first_name = request.POST.get('first_name')
         employee.last_name = request.POST.get('last_name')
         employee.father_name = request.POST.get('father_name')
         employee.city = request.POST.get('city')
+        employee.email = request.POST.get('email')
         employee.phone_number = request.POST.get('phone_number')
         employee.save()
+
+        user = User.objects.get(pk=request.user.id)
+        user.username = request.POST.get('user')
+        user.email = employee.email
+        user.save()
+
 
         return HttpResponseRedirect('/person_card/')
 
     return render_to_response(template_name, {
-        'user': user,
-        'employee': employee,
-
+        'first_name': employee.first_name,
+        'last_name': employee.last_name,
+        'father_name': employee.father_name,
+        'city': employee.city,
+        'email': employee.email,
     }, context_instance=RequestContext(request))
 
 
