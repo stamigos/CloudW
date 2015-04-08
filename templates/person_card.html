@@ -50,18 +50,18 @@
 						<div class="block"></div>
 						<div class="submit-pt s-pb">Применить</div>
 					</form>
-					<form action="post.php" method="post" class="user-form uf-1">
+					<form action="" method="post" class="user-form uf-1">
 						<table class="person-table a" cellspacing="0 20">
 							<tr>
 								<td>Имя:</td>
 								<td>
-									<input type="text" value="{{ request.user.get_profile.whatever.first_name }}">
+									<input type="text" value="{{ profile.user.username }}">
 								</td>
 							</tr>
 							<tr>
 								<td>Фамилия:</td>
 								<td>
-									<input type="text" value="{{ request.user.get_profile.whatever }}">
+									<input type="text" value="{{ profile.user.first_name }}">
 								</td>
 							</tr>
 							<tr>
