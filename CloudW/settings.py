@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'registration',
    # 'registration.supplements.default',
-    'mailer',
     'supplement_registration',
     'privatebroadcast',
     'multiuploader',
@@ -129,7 +128,7 @@ MULTIUPLOADER_FILE_EXPIRATION_TIME = 3600
 REGISTRATION_SUPPLEMENT_CLASS = 'supplement_registration.models.MyRegistrationSupplement'
 
 ACCOUNT_ACTIVATION_DAYS = 7
-EMAIL_BACKEND = 'mailer.backend.DbBackend'
+
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'witnessescloud@gmail.com'
