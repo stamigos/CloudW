@@ -62,13 +62,17 @@
 					<div class="block-l scroll-pane">
 						<table cellspacing="0" class="table" id="playlist">
                             {% for task in tasks %}
-							<a href="/video/{{ task.pk }} "><tr>
+							<tr>
 								<td>
-									<p>{{ task.video.filename }}</p>
-									<p class="active-drop">{{ task.title }}</p>
+                                    <a href="/video/{{ task.pk }} ">
+                                        <div style="height:100%;width:100%">
+											<p>{{ task.video.filename }}</p>
+											<p class="active-drop">{{ task.title }}</p>
+                                        </div>
+                                    </a>
 								</td>
 								<td>{{ task.video.upload_date }}</td>
-							</tr></a>
+							</tr>
                             {% endfor %}
 						</table>
 					</div>
