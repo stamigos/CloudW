@@ -55,13 +55,13 @@
 							<tr>
 								<td>Имя:</td>
 								<td>
-									<input type="text" value="{{ profile.get_profile.whatever.first_name }}">
+									<input type="text" value="{{ request.user.get_profile.whatever.first_name }}">
 								</td>
 							</tr>
 							<tr>
 								<td>Фамилия:</td>
 								<td>
-									<input type="text" value="{{ profile.get_profile.whatever }}">
+									<input type="text" value="{{ request.user.get_profile.whatever }}">
 								</td>
 							</tr>
 							<tr>
