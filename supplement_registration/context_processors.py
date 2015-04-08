@@ -18,3 +18,4 @@ def user(request):
     return {
         'user_fullname': ''
     }
+
