@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/media_queries_greet.css">
 {% endblock %}
-<body onload="initFields()">
+<body>
 {% block header %}
     {% include 'registration/login.html' %}
 {% endblock %}
@@ -95,7 +95,7 @@
          }
      });
 
-	function initFields(){
+     window.onload = function(){
         document.getElementById("id_username").setAttribute("style", "display : none");
 		document.getElementById("id_email1").setAttribute("style", "display : none");
 		document.getElementById("id_email2").setAttribute("style", "display : none");
@@ -105,7 +105,7 @@
 		document.getElementById("id_city").setAttribute("placeholder", "Город");
 		document.getElementById("id_email").setAttribute("placeholder", "Email");
 		document.getElementById("id_phone_number").setAttribute("placeholder", "Телефон");
-    };
+    }();
 
 
  </script>
