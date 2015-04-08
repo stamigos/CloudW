@@ -2,7 +2,6 @@
 from django.db import models
 from registration.supplements import RegistrationSupplementBase
 from phonenumber_field.modelfields import PhoneNumberField
-from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 
 
@@ -18,10 +17,3 @@ class MyRegistrationSupplement(RegistrationSupplementBase):
     def __unicode__(self):
         # a summary of this supplement
         return "%s %s" % (self.first_name, self.last_name)
-
-
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        MyRegistrationSupplement.objects.create(user=instance)
-
-post_save.connect(create_user_profile, sender=User)
