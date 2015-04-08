@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, ViewDoesNotExist
 from supplement_registration.models import MyRegistrationSupplement
 
 
@@ -19,7 +19,11 @@ def profile_settings(request, template_name="person_card.html"):
                                            city='', email='', phone_number='')
 
     if request.POST:
-        employee = MyRegistrationSupplement.objects.get(email=request.user.email)
+        try:
+            employee = MyRegistrationSupplement.objects.get(email=request.user.email)
+        except ObjectDoesNotExist:
+            raise ViewDoesNotExist
+
         employee.first_name = request.POST.get('first_name')
         employee.last_name = request.POST.get('last_name')
         employee.father_name = request.POST.get('father_name')
