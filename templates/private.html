@@ -46,6 +46,8 @@
 			<a href="{% url 'index' %}" class="to-pc">Личный кабинет</a>
 			<div class="video-block">
 				<div class="videos-container">
+                    <embed type="application/x-shockwave-flash" wmode="transparent" src="//stat.vo.org.ua/images/streamPlayer.swf" width="495" height="280" allowfullscreen="true" flashvars="file=kiev-video-low&streamer=rtmp://rtmp.cdn.ua/vo.org.ua_live/_definst_/&autostart=true&stretching=fill" />
+
 				<!--	<video controls="controls" autoplay="autoplay">
 						 <source src="rtmp://stream.smcloud.net/live2/best/best_720p">
 					</video>-->
@@ -161,6 +163,100 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="{{ STATIC_URL }}js/private.js"></script>
     <script src="//vjs.zencdn.net/4.12/video.js"></script>
+    <script>
+    var
+            players	= {
+                pc	: {
+                    prefix	: '<iframe frameborder="0" wmode="transparent" scrolling="no" style="width:495px;height:280px;border:none;" src="http://cdn.ua/code/vo.org.ua/live/index.php?stream=',
+                    suffix	: '&width=495&height=280&image=http%3A%2F%2Fstat.vo.org.ua%2Fimages%2FonlinePlayer.jpg&autoplay=1&stage=3"></iframe>'
+                },
+                apple	: {
+                    prefix	: '<video wmode="transparent" src="http://rtmp.cdn.ua/vo.org.ua_live/_definst_/',
+                    suffix	: '/playlist.m3u8" width="495" height="280" controls></video>'
+                },
+                android	: {
+                    prefix	: '<video wmode="transparent" src="rtsp://rtsp.cdn.ua/vo.org.ua_live/_definst_/',
+                    suffix	: '" height="280" width="495" controls>'
+                }
+            },
+	    	satellite   = 'hotbird',
+            language	= 'ru',
+            quality	= 'high',
+            languageControl, satelliteControl, qualityControl, player, languageRu, languageEn;
+
+    $(document).ready(function(){
+		languageRu	    = $('#languageRu');
+		languageEn	    = $('#languageEn');
+		satelliteControl    = $('#satellite');
+        qualityControl	    = $('#qualityControl');
+        player		    = $('#playerEmbed');
+
+        qualityControl.val(quality);
+
+		languageRu.on('click', function(){languageRu.addClass('active');languageEn.removeClass('active');changeLanguage('ru');});
+		languageEn.on('click', function(){languageEn.addClass('active');languageRu.removeClass('active');changeLanguage('en');});
+
+		satelliteControl.on('change', changeSatellite);
+        qualityControl.on('change', changeQuality);
+
+        makeCode();
+    });
+    function changeLanguage(lang){
+        language    = lang;
+
+        makeCode();
+    }
+    function changeQuality(){
+        quality = qualityControl.val();
+
+        makeCode();
+    }
+    function changeSatellite() {
+		satellite = satelliteControl.val();
+
+		makeCode();
+    }
+
+    function makeCode(){
+		if (language != 'en')
+			var thread = 'online-' + language + '-' + satellite + '-' + quality;
+		else
+			var thread = 'online-' + language + '-' + quality;
+                 var playerHtml;
+
+	var mobile	= false;
+        if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)){
+            playerHtml = players.apple.prefix + thread + players.apple.suffix;
+            mobile	= true;
+        } else if (navigator.userAgent.match(/(android)/i)){
+            playerHtml = players.android.prefix + thread + players.android.suffix;
+            mobile	= true;
+        } else {
+            playerHtml = players.pc.prefix + thread + players.pc.suffix;
+        }
+
+	if (!mobile && !isFlash()) {
+            player.html('<a href="http://get.adobe.com/ru/flashplayer/"><img src="http://stat.vo.org.ua/images/flash.jpg" alt=""/></a>');
+            return;
+        } else
+            player.html(playerHtml);
+    }
+    function isFlash() {
+        if (navigator.plugins) {
+            if (navigator.plugins["Shockwave Flash"])
+                return true;
+            else if (navigator.plugins["Shockwave Flash 2.0"])
+                return true;
+        } else if (navigator.mimeTypes) {
+            var x = navigator.mimeTypes['application/x-shockwave-flash'];
+            if (x && x.enabledPlugin)
+                return true;
+        } else
+            return true;
+        return false;
+    }
+</script>
+
 		<script type="text/javascript">
 
      (function ($) {
