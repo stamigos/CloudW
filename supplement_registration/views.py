@@ -28,7 +28,9 @@ def profile_settings(request, template_name="person_card.html"):
 
         return HttpResponseRedirect('/person_card/')
 
+    profile = request.user
     return render_to_response(template_name, {
+        'profile': profile,
         'first_name': request.GET.get('first_name'),
         'last_name': request.GET.get('last_name'),
         'father_name': request.GET.get('father_name'),
