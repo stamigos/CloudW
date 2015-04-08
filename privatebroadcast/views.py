@@ -21,7 +21,7 @@ def index(request, template_name="index.html"):
 @login_required(login_url='/registration/register/')
 def video_view(request, template_name="video.html", pk=None):
     tasks = Task.objects.all()
-    task = tasks[pk]
+    task = tasks.filter(pk=pk)
     return render_to_response(template_name, {
         'tasks': tasks,
         'task_pk': task
