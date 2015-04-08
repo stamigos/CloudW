@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'privatebroadcast.views.index', name='index'),
+  #  url(r'^$', 'privatebroadcast.views.index', name='index'),
     url(r'^video/$', 'privatebroadcast.views.video_view',
         name='video_view'),
     url(r'^profiles/logout/$', 'supplement_registration.views.logout_view', name="logout"),

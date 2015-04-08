@@ -19,10 +19,13 @@ def index(request, template_name="index.html"):
 
 
 @login_required(login_url='/registration/register/')
-def video_view(request, template_name="video.html"):
-    #tasks = Task.objects.all()
-    #task = tasks[pk]
-    return render_to_response(template_name,  context_instance=RequestContext(request))
+def video_view(request, template_name="video.html", pk=None):
+    tasks = Task.objects.all()
+    task = tasks[pk]
+    return render_to_response(template_name, {
+        'tasks': tasks,
+        'task_pk': task
+    }, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/registration/register/')
