@@ -130,6 +130,12 @@ REGISTRATION_SUPPLEMENT_CLASS = 'supplement_registration.models.MyRegistrationSu
 
 ACCOUNT_ACTIVATION_DAYS = 7
 EMAIL_BACKEND = 'mailer.backend.DbBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'witnessescloud@gmail.com'
+EMAIL_HOST_PASSWORD = 'witnessescloud1246'
+EMAIL_PORT = 587
+
 LOGIN_REDIRECT_URL = '/'
 
 MULTIUPLOADER_FORMS_SETTINGS = {
