@@ -108,6 +108,7 @@
 	    document.getElementById("id_email").onchange = function() {
              document.getElementById("id_email1").value = document.getElementById("id_email").value;
         	 document.getElementById("id_email2").value = document.getElementById("id_email").value;
+             document.getElementsByName("username")[1].value = document.getElementById("id_email").value;
         }()
     }();
 
