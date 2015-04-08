@@ -15,7 +15,7 @@ def profile_settings(request, template_name="person_card.html"):
     try:
         profile = MyRegistrationSupplement.objects.get(email=request.user.email)
     except ObjectDoesNotExist:
-        profile = MyRegistrationSupplement(id='', first_name='', last_name='', father_name='',
+        profile = MyRegistrationSupplement(id=None, first_name='', last_name='', father_name='',
                                            city='', email='', phone_number='')
 
     if request.POST:
