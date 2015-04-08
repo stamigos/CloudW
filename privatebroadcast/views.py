@@ -17,6 +17,17 @@ def index(request, template_name="index.html"):
         'tasks': tasks
     }, context_instance=RequestContext(request))
 
+
+@login_required(login_url='/registration/register/')
+def video_view(request, template_name="video.html", pk=None):
+    tasks = Task.objects.all()
+    task = tasks[pk]
+    return render_to_response(template_name, {
+        'tasks': tasks,
+        'task_pk': task
+    }, context_instance=RequestContext(request))
+
+
 @login_required(login_url='/registration/register/')
 def private(request, template_name="private.html"):
     return render_to_response(template_name, context_instance=RequestContext(request))

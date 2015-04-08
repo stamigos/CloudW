@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from supplement_registration.forms import MyRegistrationFormUniqueEmail, MyRegistrationForm
 from supplement_registration.views import logout_view
+from privatebroadcast.views import video_view
 from registration.views import RegistrationView
 from django.contrib import admin
 from django.conf.urls.static import static
@@ -14,6 +15,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'privatebroadcast.views.index', name='index'),
+    url(r'^(\d+)/$', 'privatebroadcast.views.video_view', name='video_view'),
     url(r'^profiles/logout/$', 'supplement_registration.views.logout_view', name="logout"),
     url(r'^person_card/$', 'supplement_registration.views.profile_settings', name="profile_settings"),
     url(r'^private/$', 'privatebroadcast.views.private', name="private"),

@@ -121,36 +121,36 @@ function run(link, player){
                     <video id="example_video_1" class="video-js vjs-default-skin"
 					  controls preload="auto" width="640" height="264"
 					  data-setup='{"example_option":true}'>
-					 <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ tasks.0.video.id }}/" type="video/mp4" />
-                        <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ tasks.0.video.id }}/" type="video/webm" />
+					 <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ task_pk.video.id }}/" type="video/mp4" />
+                        <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ task_pk.video.id }}/" type="video/webm" />
 					<!-- <source src="rtmp://stream.smcloud.net/live2/best/best_720p" type='video/webm' />
 					 <source src="rtmp://stream.smcloud.net/live2/best/best_720p" type='video/ogg' />-->
 					 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 					</video>
 				</div>
-				<div class="date-vb">{{ tasks.0.video.upload_date }}</div>
+				<div class="date-vb">{{ task_pk.video.upload_date }}</div>
 			</div>
 		</div>
 		<div class="test-task">
 			<div class="header-t">Тестовое Задание</div>
 			<div class="bodies">
 				<div class="body-t">
-					<div class="date-t">{{ tasks.0.video.upload_date }}</div>
+					<div class="date-t">{{ task_pk.video.upload_date }}</div>
 					<div class="article-t">
-						<p class="header-a">{{ tasks.0.title }}</p>
+						<p class="header-a">{{ task_pk.title }}</p>
 						<div class="body-a">
 							<div class="pic-a"></div>
-							<div class="text-a">{{ tasks.0.description }}</div>
+							<div class="text-a">{{ task_pk.description }}</div>
 					</div>
 					<div class="more-t">Читать далее</div>
 				</div>
 				<div class="body-t">
-					<div class="date-t">{{ tasks.0.video.upload_date }}</div>
+					<div class="date-t">{{ task_pk.video.upload_date }}</div>
 					<div class="article-t">
-						<p class="header-a">{{ tasks.0.title }}</p>
+						<p class="header-a">{{ task_pk.title }}</p>
 						<div class="body-a">
 							<div class="pic-a"></div>
-							<div class="text-a">{{ tasks.0.description }}</div>
+							<div class="text-a">{{ task_pk.description }}</div>
 						</div>
 					</div>
 					<div class="more-t">Читать далее</div>
