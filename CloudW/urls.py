@@ -15,7 +15,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'privatebroadcast.views.index', name='index'),
-    url(r'^video/(\d+)/$', 'privatebroadcast.views.video_view',
+    url(r'^video/$', 'privatebroadcast.views.video_view',
         name='video_view'),
     url(r'^profiles/logout/$', 'supplement_registration.views.logout_view', name="logout"),
     url(r'^person_card/$', 'supplement_registration.views.profile_settings', name="profile_settings"),
