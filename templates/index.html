@@ -223,7 +223,9 @@ function run(link, player){
 	<script src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
     <script src="//vjs.zencdn.net/4.12/video.js"></script>
 		<script type="text/javascript">
-        var a = {{ tasks }};
+            {% for task in tasks %}
+        var a = {{ task }};
+            {% endfor %}
 
      (function ($) {
          $.support.placeholder = ('placeholder' in document.createElement('input'));
