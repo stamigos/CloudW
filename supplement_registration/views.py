@@ -1,12 +1,12 @@
 from django.shortcuts import render_to_response, redirect
-from django.http import request, HttpResponseRedirect, Http404
+from django.http import request, HttpResponseRedirect, Http404, HttpResponseBadRequest
 from django.template import RequestContext
 #from profiles.forms import EmailUserCreationForm, UserLoginForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
-from django.core.exceptions import ObjectDoesNotExist, ViewDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist
 from supplement_registration.models import MyRegistrationSupplement
 
 
@@ -22,7 +22,7 @@ def profile_settings(request, template_name="person_card.html"):
         try:
             employee = MyRegistrationSupplement.objects.get(email=request.user.email)
         except ObjectDoesNotExist:
-            raise ViewDoesNotExist
+            raise HttpResponseBadRequest
 
         employee.first_name = request.POST.get('first_name')
         employee.last_name = request.POST.get('last_name')
