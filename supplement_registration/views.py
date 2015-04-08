@@ -11,10 +11,10 @@ from supplement_registration.models import MyRegistrationSupplement
 
 @login_required(login_url='/registration/register')
 def profile_settings(request, template_name="person_card.html"):
-    profile = MyRegistrationSupplement.objects.get(pk=request.user.pk)
+    profile = MyRegistrationSupplement.objects.get(email=request.user.email)
 
     if request.POST:
-        employee = MyRegistrationSupplement.objects.get(pk=request.user.pk)
+        employee = MyRegistrationSupplement.objects.get(email=request.user.email)
         employee.first_name = request.POST.get('first_name')
         employee.last_name = request.POST.get('last_name')
         employee.father_name = request.POST.get('father_name')
