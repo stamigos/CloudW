@@ -6,12 +6,17 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from supplement_registration.models import MyRegistrationSupplement
 
 
 @login_required(login_url='/registration/register')
 def profile_settings(request, template_name="person_card.html"):
-    profile = MyRegistrationSupplement.objects.get_or_create(email=request.user.email)
+    try:
+        profile = MyRegistrationSupplement.objects.get(email=request.user.email)
+    except ObjectDoesNotExist:
+        profile = MyRegistrationSupplement(first_name='', last_name='', father_name='',
+                                           city='', email='', phone_number='')
 
     if request.POST:
         employee = MyRegistrationSupplement.objects.get_or_create(email=request.user.email)
