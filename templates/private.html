@@ -49,11 +49,18 @@
 				<!--	<video controls="controls" autoplay="autoplay">
 						 <source src="rtmp://stream.smcloud.net/live2/best/best_720p">
 					</video>-->
-                    <video id="example_video_1" class="video-js vjs-default-skin"
+                    <div id="ccc" class="flowplayer">
+  <video>
+					 <source src="rtmp://rtmp.cdn.ua/vo.org.ua_live/_definst_/cloud_secure_high" type='rtmp/webm' />
+					<source src="http://rtmp.cdn.ua/vo.org.ua_live/_definst_/cloud_secure_high/playlist.m3u8" type='rtmp/mp4' />
+					<source src="rtsp://rtsp.cdn.ua/vo.org.ua_live/_definst_/cloud_secure_high" type='rtsp/mp4' />
+  </video>
+</div>
+                 <!--   <video id="example_video_1" class="video-js vjs-default-skin"
 					  controls preload="auto" width="640" height="264"
 					  data-setup='{"example_option":true}'>
 					 <!--<source src="rtmp://stream.smcloud.net/live2/best/best_720p" type='rtmp/mp4' />-->
-					 <source src="rtmp://rtmp.cdn.ua/vo.org.ua_live/_definst_/cloud_secure_high" type='rtmp/webm' />
+			<!--		 <source src="rtmp://rtmp.cdn.ua/vo.org.ua_live/_definst_/cloud_secure_high" type='rtmp/webm' />
 					<source src="http://rtmp.cdn.ua/vo.org.ua_live/_definst_/cloud_secure_high/playlist.m3u8" type='rtmp/mp4' />
 					<source src="rtsp://rtsp.cdn.ua/vo.org.ua_live/_definst_/cloud_secure_high" type='rtsp/mp4' />
 
@@ -66,8 +73,8 @@
 					<source src="rtsp://rtsp.cdn.ua/vo.org.ua_live/_definst_/cloud_secure_audio" type='rtsp/mp4' />
 					<!-- <source src="rtmp://stream.smcloud.net/live2/best/best_720p" type='video/webm' />
 					 <source src="rtmp://stream.smcloud.net/live2/best/best_720p" type='video/ogg' />-->
-					 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-					</video>
+				<!--	 <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+					</video>-->
 				</div>
 				<div class="date-vb">
 					Cейчас смотрят: 
@@ -178,6 +185,17 @@
              });
          }
      });
- </script>	
+ </script>
+<script language="JavaScript">
+  flowplayer("player", "{{ STATIC_URL }}flowplayer-3.2.7.swf");
+
+ // global configuration
+flowplayer.conf = {
+  splash: true,
+  qualities: "288p,480p,576p",
+  defaultQuality: "480p",
+  rtmp: "rtmp://rtmp.cdn.ua/vo.org.ua_live/_definst_/cloud_secure_high"
+};
+</script>
 </body>
 </html>
