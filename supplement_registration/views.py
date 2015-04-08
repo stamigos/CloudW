@@ -22,7 +22,7 @@ def profile_settings(request, template_name="person_card.html"):
         try:
             employee = MyRegistrationSupplement.objects.get(email=request.user.email)
         except ObjectDoesNotExist:
-            raise HttpResponseBadRequest
+            raise Http404
 
         employee.first_name = request.POST.get('first_name')
         employee.last_name = request.POST.get('last_name')
