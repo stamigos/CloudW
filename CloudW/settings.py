@@ -133,7 +133,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'witnessescloud@gmail.com'
 EMAIL_HOST_PASSWORD = 'witnessescloud1246'
-EMAIL_PORT = 587
+EMAIL_PORT = 25
 
 LOGIN_REDIRECT_URL = '/'
 
