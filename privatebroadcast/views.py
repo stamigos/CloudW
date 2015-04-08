@@ -24,7 +24,7 @@ def video_view(request, template_name="video.html", pk=None):
     task = Task.objects.filter(pk=pk)
     return render_to_response(template_name, {
         'tasks': tasks,
-        'task_pk': task
+        'task_pk': task[0],
     }, context_instance=RequestContext(request))
 
 
