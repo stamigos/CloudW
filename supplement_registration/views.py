@@ -24,7 +24,7 @@ def profile_settings(request, template_name="person_card.html"):
         employee.save()
 
         user = User.objects.get(pk=request.user.id)
-        user.username = request.POST.get('user')
+        user.username = employee.email
         user.email = employee.email
         user.save()
 
