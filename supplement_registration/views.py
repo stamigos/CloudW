@@ -34,7 +34,7 @@ def profile_settings(request, template_name="person_card.html"):
 
     return render_to_response(template_name, {
         'first_name': profile,
-        'last_name': profile.last_name,
+        'last_name': profile,
         'father_name': request.GET.get('father_name'),
         'city': request.GET.get('city'),
         'email': request.GET.get('email'),
