@@ -95,8 +95,7 @@
          }
      });
 
-     document.onload = function(){
-
+     document.onload = function() {
 		document.getElementById("id_email1").setAttribute("hidden", "hidden");
 		document.getElementById("id_email2").setAttribute("style", "display : none");
 		document.getElementById("id_last_name").setAttribute("placeholder", "Фамилия");
@@ -106,8 +105,11 @@
 		document.getElementById("id_email").setAttribute("placeholder", "Email");
 		document.getElementById("id_phone_number").setAttribute("placeholder", "Телефон");
 	    document.getElementsByName("username")[1].setAttribute("hidden", "hidden");
+	    document.getElementById("id_email").onchange = function() {
+             document.getElementById("id_email1").value = document.getElementById("id_email").value;
+        	 document.getElementById("id_email2").value = document.getElementById("id_email").value;
+        }()
     }();
-
 
  </script>
 {% endblock %}
