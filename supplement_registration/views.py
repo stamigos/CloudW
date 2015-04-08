@@ -11,8 +11,8 @@ from supplement_registration.models import MyRegistrationSupplement
 
 @login_required(login_url='/registration/register')
 def profile_settings(request, template_name="person_card.html"):
-    _user = ''
-    _employee = ''
+    user = ''
+    employee = ''
     if request.POST:
         user = User.objects.get(pk=request.user.id)
         user.username = request.POST.get('user')
@@ -27,14 +27,11 @@ def profile_settings(request, template_name="person_card.html"):
         employee.phone_number = request.POST.get('phone_number')
         employee.save()
 
-        _user = user
-        _employee = employee
-
         return HttpResponseRedirect('/person_card/')
 
     return render_to_response(template_name, {
-        'user': _user,
-        'employee': _employee,
+        'user': user,
+        'employee': employee,
 
     }, context_instance=RequestContext(request))
 
