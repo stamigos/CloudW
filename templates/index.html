@@ -150,7 +150,7 @@ function run(link, player){
 						<p class="header-a">{{ tasks.0.title }}</p>
 						<div class="body-a">
 							<div class="pic-a"></div>
-							<div class="text-a">{{ tasks }}</div>
+							<div class="text-a">{{ tasks.0.description }}</div>
 						</div>
 					</div>
 					<div class="more-t">Читать далее</div>
@@ -223,6 +223,7 @@ function run(link, player){
 	<script src="{{ STATIC_URL }}js/jquery.mousewheel.js"></script>
     <script src="//vjs.zencdn.net/4.12/video.js"></script>
 		<script type="text/javascript">
+        var a = {{ tasks }};
 
      (function ($) {
          $.support.placeholder = ('placeholder' in document.createElement('input'));
