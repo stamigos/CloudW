@@ -29,12 +29,12 @@ def profile_settings(request, template_name="person_card.html"):
         return HttpResponseRedirect('/person_card/')
 
     return render_to_response(template_name, {
-        'first_name': request.POST.get('first_name'),
-        'last_name': request.POST.get('last_name'),
-        'father_name': request.POST.get('father_name'),
-        'city': request.POST.get('city'),
-        'email': request.POST.get('email'),
-        'phone_number': request.POST.get('phone_number')
+        'first_name': request.GET.get('first_name'),
+        'last_name': request.GET.get('last_name'),
+        'father_name': request.GET.get('father_name'),
+        'city': request.GET.get('city'),
+        'email': request.GET.get('email'),
+        'phone_number': request.GET.get('phone_number')
     }, context_instance=RequestContext(request))
 
 
