@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/styles.css">
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/media_queries_greet.css">
 {% endblock %}
-<body>
+<body onload="initFields()">
 {% block header %}
     {% include 'registration/login.html' %}
 {% endblock %}
@@ -95,15 +95,18 @@
          }
      });
 
-document.getElementById("id_username").setAttribute("style", "display : none");
-document.getElementById("id_email1").setAttribute("style", "display : none");
-document.getElementById("id_email2").setAttribute("style", "display : none");
-document.getElementById("id_last_name").setAttribute("placeholder", "Фамилия");
-document.getElementById("id_first_name").setAttribute("placeholder", "Имя");
-document.getElementById("id_father_name").setAttribute("placeholder", "Отчество");
-document.getElementById("id_city").setAttribute("placeholder", "Город");
-document.getElementById("id_email").setAttribute("placeholder", "Email");
-document.getElementById("id_phone_number").setAttribute("placeholder", "Телефон");
+	function initFields(){
+        document.getElementById("id_username").setAttribute("style", "display : none");
+		document.getElementById("id_email1").setAttribute("style", "display : none");
+		document.getElementById("id_email2").setAttribute("style", "display : none");
+		document.getElementById("id_last_name").setAttribute("placeholder", "Фамилия");
+		document.getElementById("id_first_name").setAttribute("placeholder", "Имя");
+		document.getElementById("id_father_name").setAttribute("placeholder", "Отчество");
+		document.getElementById("id_city").setAttribute("placeholder", "Город");
+		document.getElementById("id_email").setAttribute("placeholder", "Email");
+		document.getElementById("id_phone_number").setAttribute("placeholder", "Телефон");
+    };
+
 
  </script>
 {% endblock %}
