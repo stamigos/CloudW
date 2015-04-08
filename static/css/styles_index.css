@@ -202,7 +202,7 @@ input.inp-cast {
 
 .body-t {
 	
-	display:none;
+	/*display:none;*/
 	background-color: #fff;
 	position: relative;
 	margin-top: 5px;
