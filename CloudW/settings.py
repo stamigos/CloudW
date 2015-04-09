@@ -135,12 +135,13 @@ ACCOUNT_ACTIVATION_DAYS = 7
 ##EMAIL_PORT = 587
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Email sender settings.
+EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'witnessescloud@gmail.com'
-EMAIL_HOST = 'smtp.clw.com'
+SERVER_EMAIL = 'witnessescloud@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'witnessescloud@gmail.com'
 EMAIL_HOST_PASSWORD = 'witnessescloud1246'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 
 LOGIN_REDIRECT_URL = '/'
 
