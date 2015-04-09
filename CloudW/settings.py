@@ -40,6 +40,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registration',
+    'registration.contrib.notification',
+    'registration.contrib.autologin',
    # 'registration.supplements.default',
     'supplement_registration',
     'privatebroadcast',

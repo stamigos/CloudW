@@ -1,0 +1,7 @@
+{% load url from future %}
+{% load i18n %}
+{% blocktrans with site.name as site_name %}Новая регистрация на сайте {{ site_name }} - {{ user }}.{% endblocktrans %}
+
+{% trans 'Перейдите по ссылке, чтобы подтвердить/отменить регистрацию нового пользователя.' %}
+
+http://{{ site.domain }}{% url 'admin:index' %}registration/registrationprofile/{{ profile.pk }}/
