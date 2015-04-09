@@ -132,25 +132,25 @@ function validateEmail(){
     }
 
     function validateNumber(){
-        var inputText = document.r_g.number.value;
+        var inputText = document.r_g.phone_number.value;
         if(inputText.substr(0,1) !== '+'){
             document.getElementById('errorF').innerHTML = "Вы ввели неверный номер телефона! Добавьте '+'";
             display()
-            document.r_g.number.focus();
+            document.r_g.phone_number.focus();
             return false;
 
         } else
         if(inputText.length !== 13){
             document.getElementById('errorF').innerHTML = "Вы ввели неверный номер телефона!";
             display()
-            document.r_g.number.focus();
+            document.r_g.phone_number.focus();
             return false;
 
         }else
            if(isNaN(parseInt(inputText.substr(1)))){
                document.getElementById('errorF').innerHTML = "Вы ввели неверный номер телефона!";
                display()
-               document.r_g.number.focus();
+               document.r_g.phone_number.focus();
         }else
            return true;
 
