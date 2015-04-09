@@ -1,3 +1,4 @@
+{% extends 'registration/base.html' %}
 {% load url from future %}
 {% load i18n %}
 
@@ -5,7 +6,8 @@
 
 {% block content_title %}<h1>{% trans 'Регистрация успешно завершена' %}</h1>{% endblock %}
 
-{% block content %}
+{% block contents %}
+{{ block.super }}
 <p>{% trans 'Ваш аккаунт был успешно создан.' %}</p>
 <p>{% trans 'Ожидайте, когда модератор проверит ваши данные.' %}
 {% trans 'Вы получите подтверждение или отказ на почту через несколько дней.' %}</p>
