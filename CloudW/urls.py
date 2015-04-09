@@ -31,6 +31,6 @@ urlpatterns = patterns('',
    #     name='registration_register'),
     url(r'^registration/logout/$', 'supplement_registration.views.logout_view', name='auth_logout'),
     url('^registration/', include('registration.urls')),
-    url(r'^chat/', include('djangoChat.urls')),
+    #url(r'^chat/', include('djangoChat.urls')),
 
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

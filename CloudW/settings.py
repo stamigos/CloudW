@@ -46,7 +46,7 @@ INSTALLED_APPS = (
     'supplement_registration',
     'privatebroadcast',
     'multiuploader',
-    'djangoChat',
+    #'djangoChat',
     'south',
     'gunicorn',
 )
