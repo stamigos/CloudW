@@ -22,7 +22,7 @@
 			</div>
 			<div class="clicked-b-ft">
 				<p class="title-c-b-ft">Если Вы уже учились на саммите 4 измерение, создайте свой личный кабинет, чтобы продолжить получать текстовые и видео уроки !</p>
-                    <form action="" method="post" class="greet-form">{% csrf_token %}
+                    <form action="" method="post" class="greet-form" onsubmit="return validate()">{% csrf_token %}
                         {% for field in form %}
                             {{ field }} {# {{ field.errors }} #}
                         {% endfor %}
@@ -112,6 +112,73 @@
         }
     }();
 
+    function validateEmail(){
+        var inputText = document.csrfmiddlewaretoken.email;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(inputText.value.match(mailformat))
+        {
+            document.csrfmiddlewaretoken.email.focus();
+            return true;
+        }
+        else
+        {
+            document.getElementById('errorF').innerHTML="Вы ввели неверный email!";
+            document.csrfmiddlewaretoken.email.focus();
+            return false;
+        }
+    }
+
+    function validateNumber(){
+        var inputText = document.csrfmiddlewaretoken.number;
+        if(inputText.substr(1,1)!== '+'){
+            document.getElementById('errorF').innerHTML = "Вы ввели неверный номер телефона! Добавьте '+'";
+            document.csrfmiddlewaretoken.number.focus();
+            return false;
+
+        } else
+        if(inputText.length !== 13){
+            document.getElementById('errorF').innerHTML = "Вы ввели неверный номер телефона!";
+            document.csrfmiddlewaretoken.number.focus();
+            return false;
+
+        }else
+           if(isNaN(parseInt(inputText.substr(1)))){
+               document.getElementById('errorF').innerHTML = "Вы ввели неверный номер телефона!";
+               document.csrfmiddlewaretoken.number.focus();
+        }else
+           return true;
+
+    }
+    function validateEmpty(){
+        if(document.csrfmiddlewaretoken.first_name.length === 0){
+            document.getElementById('errorF').innerHTML = "Поле имя пустое!";
+            document.csrfmiddlewaretoken.first_name.focus();
+            return false;
+        }else
+        if(document.csrfmiddlewaretoken.last_name.length === 0){
+            document.getElementById('errorF').innerHTML = "Поле фамилия пустое!";
+            document.csrfmiddlewaretoken.last_name.focus();
+            return false;
+        }else
+        if(document.csrfmiddlewaretoken.father_name.length === 0){
+            document.getElementById('errorF').innerHTML = "Поле отчество пустое!";
+            document.csrfmiddlewaretoken.father_name.focus();
+            return false;
+        }else
+        return true;
+    }
+    function validate(){
+        if(validateEmail()){
+          if(validateNumber()){
+              if(validateEmpty()){
+                  return true;
+              }
+              else return false;
+          }
+          else return false;
+        }
+        else return false;
+    }
  </script>
 {% endblock %}
 
