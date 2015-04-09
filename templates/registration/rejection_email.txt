@@ -1,0 +1,10 @@
+{% load url from future %}
+{% load i18n %}
+{% blocktrans %}Dear {{ user }},{% endblocktrans %}
+
+{% trans 'Модератор отказал Вам в регистрации.' %}
+
+{% if message %}
+{% trans 'Причины отказа:' %}
+{{ message }}
+{% endif %}
