@@ -27,8 +27,8 @@ urlpatterns = patterns('',
     # Add django-inspectional-registration urls. The urls also define
     # Login, Logout and password_change or lot more for handle
     # registration.
-   # url(r'^registration/register/$', RegistrationView.as_view(form_class=MyRegistrationFormUniqueEmail),
-   #     name='registration_register'),
+    url(r'^registration/register/$', RegistrationView.as_view(form_class=MyRegistrationFormUniqueEmail),
+        name='registration_register'),
     url(r'^registration/logout/$', 'supplement_registration.views.logout_view', name='auth_logout'),
     url('^registration/', include('registration.urls')),
     #url(r'^chat/', include('djangoChat.urls')),
