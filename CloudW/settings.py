@@ -137,8 +137,8 @@ ACCOUNT_ACTIVATION_DAYS = 7
 # Email sender settings.
 DEFAULT_FROM_EMAIL = 'witnessescloud@gmail.com'
 EMAIL_HOST = 'witnessescloud.gmail.com'
-EMAIL_HOST_USER = '@gmail.com'
-EMAIL_HOST_PASSWORD = 'witnessescloud@gmail.com'
+EMAIL_HOST_USER = 'witnessescloud@gmail.com'
+EMAIL_HOST_PASSWORD = 'witnessescloud1246'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
