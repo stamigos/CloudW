@@ -4,14 +4,11 @@ from supplement_registration.views import logout_view
 from privatebroadcast.views import video_view
 from registration.views import RegistrationView
 from django.contrib import admin
-from django.contrib.auth.views import login
-from django.contrib.auth.decorators import user_passes_test
 
 from django.conf.urls.static import static
 import settings
 admin.autodiscover()
 
-login_forbidden = user_passes_test(lambda u: u.is_anonymous(), '/')
 
 urlpatterns = patterns('',
     # Examples:
@@ -32,7 +29,6 @@ urlpatterns = patterns('',
     # registration.
    # url(r'^registration/register/$', RegistrationView.as_view(form_class=MyRegistrationFormUniqueEmail),
    #     name='registration_register'),
-    url(r'^registration/register/$', login_forbidden(login), name="login"),
     url(r'^registration/logout/$', 'supplement_registration.views.logout_view', name='auth_logout'),
     url('^registration/', include('registration.urls')),
 
