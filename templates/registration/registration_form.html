@@ -113,7 +113,6 @@
              document.getElementsByName("username")[1].value = document.getElementById("id_email").value;
         }
     }();
-
 function validateEmail(){
         var inputText = document.r_g.email;
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -172,6 +171,12 @@ function validateEmail(){
             document.getElementById('errorF').innerHTML = "Поле отчество пустое!";
             display()
             document.r_g.father_name.focus();
+            return false;
+        }else
+        if(document.r_g.city.value.length === 0){
+            document.getElementById('errorF').innerHTML = "Поле город пустое!";
+            display()
+            document.r_g.city.focus();
             return false;
         }else
         return true;
