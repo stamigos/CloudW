@@ -134,6 +134,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'witnessescloud@gmail.com'
 EMAIL_HOST_PASSWORD = 'witnessescloud1246'
 EMAIL_PORT = 587
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 LOGIN_REDIRECT_URL = '/'
 
