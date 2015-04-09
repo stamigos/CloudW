@@ -69,9 +69,12 @@ video {
 }
 
 .header-cast {
-	float: left;
 	color: #fff;
 	font-weight: 600;
+	float: left;
+  padding-top: 7px;
+  padding-right: 24px;
+  padding-left: 10px;
 }
 
 .cast {
