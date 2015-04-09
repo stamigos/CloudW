@@ -102,6 +102,8 @@
      });
 
      document.onload = function() {
+         document.getElementsByName("username")[0].setAttribute("placeholder", "Логин");
+         document.getElementsByName("password")[0].setAttribute("placeholder", "Пароль");
 		document.getElementById("id_email1").setAttribute("hidden", "hidden");
 		document.getElementById("id_email2").setAttribute("style", "display : none");
 		document.getElementById("id_last_name").setAttribute("placeholder", "Фамилия");
