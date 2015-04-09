@@ -147,7 +147,8 @@ ACCOUNT_ACTIVATION_DAYS = 7
 #EMAIL_HOST = 'smtp.gmail.com'
 ##EMAIL_HOST_USER = 'witnessescloud@gmail.com'
 #EMAIL_HOST_PASSWORD = 'witnessescloud1246'
-
+DEFAULT_FROM_EMAIL = 'cwitnesses@gmail.com'
+#SERVER_EMAIL = 'witnessescloud@gmail.com'
 EMAIL_HOST = 'smtp.mandrillapp.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'cwitnesses@gmail.com'
