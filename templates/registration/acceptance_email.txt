@@ -1,11 +1,11 @@
 {% load url from future %}
 {% load i18n %}
-{% blocktrans %}Dear {{ user }},{% endblocktrans %}
+{% blocktrans %} {{ user }},{% endblocktrans %}
 
-{% blocktrans with site.name as site_name %}Your registration of {{ site_name }} was accepted by inspector.{% endblocktrans %}
+{% blocktrans with site.name as site_name %}Ваш аккаунт {{ site_name }} был подтвержден модератором.{% endblocktrans %}
 
-{% trans 'Please click the following url and set your account password to finish activation.' %}
+{% trans 'Пожалуйста, перейдите по ссылке и установите свой пароль для аккаунта, чтобы закончить активацию.' %}
 
 http://{{ site.domain }}{% url 'registration_activate' activation_key=activation_key %}
 
-{% blocktrans %}The activation link above will be expired in {{ expiration_days }} days.{% endblocktrans %}
+{% blocktrans %} Количество дней, когда ссылка активации актуальна - {{ expiration_days }} .{% endblocktrans %}
