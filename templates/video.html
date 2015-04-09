@@ -66,7 +66,7 @@
 								<td>
                                     <a href="/video/{{ task.pk }} ">
                                         <div style="height:100%;width:100%">
-											<p>{{ task.video.filename }}</p>
+											<p>{{ task.video.filename | truncatechars:25 }}</p>
 											<p class="active-drop">{{ task.title }}</p>
                                         </div>
                                     </a>
