@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registration',
+    'mailer',
    # 'registration.supplements.default',
     'supplement_registration',
     'privatebroadcast',
@@ -126,6 +127,8 @@ MULTIUPLOADER_FILES_FOLDER = 'htdocs/'
 MULTIUPLOADER_FILE_EXPIRATION_TIME = 3600
 
 REGISTRATION_SUPPLEMENT_CLASS = 'supplement_registration.models.MyRegistrationSupplement'
+REGISTRATION_NOTIFICATION_ADMINS = True
+REGISTRATION_NOTIFICATION_MANAGERS = True
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
@@ -135,13 +138,20 @@ ACCOUNT_ACTIVATION_DAYS = 7
 ##EMAIL_PORT = 587
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Email sender settings.
-EMAIL_USE_TLS = True
+#EMAIL_USE_TLS = True
+#DEFAULT_FROM_EMAIL = 'witnessescloud@gmail.com'
+#SERVER_EMAIL = 'witnessescloud@gmail.com'
+#EMAIL_HOST = 'smtp.gmail.com'
+##EMAIL_HOST_USER = 'witnessescloud@gmail.com'
+#EMAIL_HOST_PASSWORD = 'witnessescloud1246'
+
 DEFAULT_FROM_EMAIL = 'witnessescloud@gmail.com'
 SERVER_EMAIL = 'witnessescloud@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'witnessescloud@gmail.com'
 EMAIL_HOST_PASSWORD = 'witnessescloud1246'
+EMAIL_USE_TLS = True
 
 LOGIN_REDIRECT_URL = '/'
 
