@@ -12,6 +12,7 @@ from .models import Task
 
 @login_required(login_url='/registration/register/')
 def index(request, template_name="index.html"):
+
     tasks = Task.objects.all()
     return render_to_response(template_name, {
         'tasks': tasks
