@@ -112,7 +112,7 @@
 					<div class="article-t">
 						<p class="header-a">{{ tasks.0.title }}</p>
 						<div class="body-a">
-							<div class="pic-a" style="background-color: #fff;"><img src="{{ tasks.0.image }}" /></div>
+							<div class="pic-a" style="background-color: #fff;"><img src="{{ MEDIA_URL }}{{ tasks.0.image }}" /></div>
 							<div class="text-a">{{ tasks.0.description }}</div>
 					</div>
 					<div class="more-t">Читать далее</div>
@@ -122,7 +122,7 @@
 					<div class="article-t">
 						<p class="header-a">{{ tasks.0.title }}</p>
 						<div class="body-a">
-							<div class="pic-a" style="background-color: #fff;"><img src="{{ tasks.0.image }}" /> </div>
+							<div class="pic-a" style="background-color: #fff;"><img src="{{ MEDIA_URL }}{{ tasks.0.image }}" /> </div>
 							<div class="text-a">{{ tasks.0.description }}</div>
 						</div>
 					</div>
