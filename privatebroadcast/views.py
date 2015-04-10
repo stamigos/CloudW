@@ -27,6 +27,9 @@ def index(request, template_name="index.html"):
             checked = u'Благодарность'
         if id == '4':
             checked = u'Свидетельство'
+
+        email = request.user.email
+        textField += email + ':\n'
         textField += request.POST.get('textFIELD', '')
         if textField != u'':
             send_mail(checked, textField, 'cwitnesses@gmail.com',
@@ -53,12 +56,12 @@ def video_view(request, template_name="video.html", pk=None):
         if id == '4':
             checked = u'Свидетельство'
 
-        email = request.user.username
-        textField += email + ':'
+        email = request.user.email
+        textField += email + ':\n'
         textField += request.POST.get('textFIELD', '')
         if textField != u'':
             send_mail(checked, textField, 'cwitnesses@gmail.com',
-                      ['oldtigersvoice@gmail.com'], fail_silently=False)
+                      ['4izmerenie.sammit2015@gmail.com'], fail_silently=False)
     tasks = Task.objects.all()
     task = Task.objects.filter(pk=pk)
     return render_to_response(template_name, {
