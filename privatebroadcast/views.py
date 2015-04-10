@@ -35,8 +35,10 @@ def index(request, template_name="index.html"):
             send_mail(checked, textField, 'cwitnesses@gmail.com',
                       ['4izmerenie.sammit2015@gmail.com'], fail_silently=False)
     tasks = Task.objects.all()
+    videos = tasks[0].video_multiple
     return render_to_response(template_name, {
         'tasks': tasks,
+        'videos': videos
     }, context_instance=RequestContext(request))
 
 
