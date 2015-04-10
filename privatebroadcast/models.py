@@ -6,7 +6,7 @@ from ckeditor.fields import RichTextField
 
 #TODO: add DateField() for tasks
 class Task(models.Model):
-    video_ = models.ManyToManyField(MultiuploaderFile, blank=True)
+    video_ = models.ManyToManyField(MultiuploaderFile, blank=True, default=None)
     filename = models.CharField(max_length=30, blank=True)
     title = models.CharField(max_length=200)
     description = RichTextField()
