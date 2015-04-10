@@ -137,7 +137,7 @@ function validateEmail(){
         }
     }
 
-/*    function validateNumber(){
+    function validateNumber(){
         var inputText = document.r_g.phone_number.value;
         if(inputText.substr(0,1) !== '+'){
             document.getElementById('errorF').innerHTML = "Вы ввели неверный номер телефона! Добавьте '+'";
@@ -146,13 +146,13 @@ function validateEmail(){
             return false;
 
         } else
-        if(inputText.length !== 13){
+      /*  if(inputText.length !== 13){
             document.getElementById('errorF').innerHTML = "Вы ввели неверный номер телефона!";
             display()
             document.r_g.phone_number.focus();
             return false;
 
-        }else
+        } else */
            if(isNaN(parseInt(inputText.substr(1)))){
                document.getElementById('errorF').innerHTML = "Вы ввели неверный номер телефона!";
                display()
@@ -160,7 +160,7 @@ function validateEmail(){
         }else
            return true;
 
-    }*/
+    }
     function validateEmpty(){
         if(document.r_g.first_name.value.length === 0){
             document.getElementById('errorF').innerHTML = "Поле имя пустое!";
