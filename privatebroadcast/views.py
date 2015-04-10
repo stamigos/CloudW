@@ -27,10 +27,10 @@ def index(request, template_name="index.html"):
             checked = u'Благодарность'
         if id == '4':
             checked = u'Свидетельство'
-    textField += checked + ':\n'
-    textField += request.POST.get('textFIELD', '')
-    send_mail(checked, textField, 'cwitnesses@gmail.com',
-              ['oldtigersvoice@gmail.com'], fail_silently=False)
+        textField += checked + ':\n'
+        textField += request.POST.get('textFIELD', '')
+        send_mail(checked, textField, 'cwitnesses@gmail.com',
+                  ['oldtigersvoice@gmail.com'], fail_silently=False)
     tasks = Task.objects.all()
     return render_to_response(template_name, {
         'tasks': tasks,
