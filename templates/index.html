@@ -89,7 +89,7 @@
 			<div class="video-block">
 				<div class="videos-container">
 					<video id="privatePlayer" controls="controls">
-						 <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ tasks.0.video.id }}/" type="video/webm">-->
+						 <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ tasks.0.video_multiple.0.id }}/" type="video/webm">-->
                        <!-- <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
                         <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">-->
 					</video>
@@ -124,7 +124,7 @@
 			<div class="bodies">
 
 				<div class="body-t">
-					<div class="date-t">{{ tasks.0.video.upload_date }}</div>
+					<div class="date-t">{{ tasks.0.video_multiple.0.upload_date }}</div>
 					<div class="article-t">
 						<p class="header-a">{{ tasks.0.title }}</p>
 						<div class="body-a">
