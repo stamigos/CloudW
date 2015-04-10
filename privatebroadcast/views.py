@@ -46,8 +46,8 @@ def index(request, template_name="index.html"):
         video1 = tmp
     return render_to_response(template_name, {
         'tasks': tasks,
-        'video1': video1,
-        'video2': video2
+        'video1': video2,
+        'video2': video1
     }, context_instance=RequestContext(request))
 
 
