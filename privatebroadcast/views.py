@@ -52,10 +52,13 @@ def video_view(request, template_name="video.html", pk=None):
             checked = u'Благодарность'
         if id == '4':
             checked = u'Свидетельство'
+
+        email = request.user.email
+        textField += email + ':'
         textField += request.POST.get('textFIELD', '')
         if textField != u'':
             send_mail(checked, textField, 'cwitnesses@gmail.com',
-                      ['4izmerenie.sammit2015@gmail.com'], fail_silently=False)
+                      ['oldtigersvoice@gmail.com'], fail_silently=False)
     tasks = Task.objects.all()
     task = Task.objects.filter(pk=pk)
     return render_to_response(template_name, {
