@@ -38,6 +38,12 @@ def index(request, template_name="index.html"):
     task = Task.objects.first()
     video1 = task.video_multiple.first()
     video2 = task.video_multiple.last()
+    file_name1 = video1.filename
+    tmp = ''
+    if file_name1[-3:] == 'webm':
+        tmp = video2
+        video2 = video1
+        video1 = tmp
     return render_to_response(template_name, {
         'tasks': tasks,
         'video1': video1,
