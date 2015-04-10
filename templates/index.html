@@ -79,7 +79,7 @@
 									<p><a href="http://clw.com.ua/video/{{ task.pk }} ">{{ task.filename | truncatechars:25 }}</a></p>
 									<p class="active-drop">{{ task.title | truncatechars:25 }}</p>
 								</td>
-								<td>{{ task.video_multiple.upload_date }}</td>
+								<td>{{ task.video_multiple.0.upload_date }}</td>
 							</tr>
                             {% endfor %}
 						</table>
@@ -90,7 +90,7 @@
 				<div class="videos-container">
 					<video id="privatePlayer" controls="controls">
                         <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ tasks.0 }}/" type="video/mp4">
-						 <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ tasks.0.video_multiple.pk }}/" type="video/webm">-->
+						 <source src="http://clw.com.ua/your_uploads/multiuploader_file/{{ tasks.0.video_multiple.0.pk }}/" type="video/webm">-->
                        <!-- <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
                         <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">-->
 					</video>
