@@ -123,7 +123,7 @@
 						<p class="header-a">{{ task_pk.title }}</p>
 						<div class="body-a">
 							<div class="pic-a" style="background-color: #fff;width:210px;height: 280px;"><img style="width:200px; height: 280px;" src="{{ MEDIA_URL }}{{ tasks.0.image }}" /></div>
-							<div class="text-a">{{ task_pk.description }}</div>
+							<div class="text-a">{{ task_pk.description | safe}}</div>
 					</div>
 					<div class="more-t">Читать далее</div>
 				</div>
@@ -133,7 +133,7 @@
 						<p class="header-a">{{ task_pk.title }}</p>
 						<div class="body-a">
 							<div class="pic-a" style="background-color: #fff;width:210px;height: 280px;"><img style="width:200px; height: 280px;" src="{{ MEDIA_URL }}{{ tasks.0.image }}" /></div>
-							<div class="text-a">{{ task_pk.description }}</div>
+							<div class="text-a">{{ task_pk.description | safe}}</div>
 						</div>
 					</div>
 					<div class="more-t">Читать далее</div>
