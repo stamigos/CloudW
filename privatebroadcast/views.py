@@ -19,13 +19,13 @@ def index(request, template_name="index.html"):
     textField = ''
     if request.POST:
         id = request.POST['rd']
-        if id == 1:
+        if id == '1':
             checked = 'Вопрос по урокам'
-        if id == 2:
+        if id == '2':
             checked = 'Нужда'
-        if id == 3:
+        if id == '3':
             checked = 'Благодарность'
-        if id == 4:
+        if id == '4':
             checked = 'Свидетельство'
     textField += checked + ':\n'
     textField += request.POST.get('textFIELD', '')
