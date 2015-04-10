@@ -28,7 +28,7 @@ def index(request, template_name="index.html"):
         if id == '4':
             checked = u'Свидетельство'
         textField += request.POST.get('textFIELD', '')
-        if textField.len != 0:
+        if textField != u'':
             send_mail(checked, textField, 'cwitnesses@gmail.com',
                       ['oldtigersvoice@gmail.com'], fail_silently=False)
     tasks = Task.objects.all()
