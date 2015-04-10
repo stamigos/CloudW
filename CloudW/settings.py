@@ -115,6 +115,8 @@ STATIC_ROOT = os.path.join(APP_ROOT, '../htdocs/')
 
 STATIC_URL = '/htdocs/'
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
 #STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),
 #)
