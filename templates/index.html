@@ -79,7 +79,7 @@
 									<p><a href="http://clw.com.ua/video/{{ task.pk }} ">{{ task.filename | truncatechars:25 }}</a></p>
 									<p class="active-drop">{{ task.title | truncatechars:25 }}</p>
 								</td>
-								<td>{{ task.video_multiple.0.upload_date }}</td>
+								<td>{{ video1.upload_date }}</td>
 							</tr>
                             {% endfor %}
 						</table>
@@ -126,7 +126,7 @@
 			<div class="bodies">
 
 				<div class="body-t">
-					<div class="date-t">{{ tasks.0.video_multiple.0.upload_date }}</div>
+					<div class="date-t">{{ video1.upload_date }}</div>
 					<div class="article-t">
 						<p class="header-a">{{ tasks.0.title }}</p>
 						<div class="body-a">
