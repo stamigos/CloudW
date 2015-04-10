@@ -76,8 +76,8 @@
                             {% for task in tasks %}
 							<tr>
 								<td>
-									<p><a href="http://clw.com.ua/video/{{ task.pk }} ">{{ task.title | truncatechars:25 }}</a></p>
-									<p class="active-drop">{{ task.description | truncatechars:50 }}</p>
+									<p><a href="http://clw.com.ua/video/{{ task.pk }} ">{{ task.video.filename | truncatechars:25 }}</a></p>
+									<p class="active-drop">{{ task.title | truncatechars:25 }}</p>
 								</td>
 								<td>{{ task.video.upload_date }}</td>
 							</tr>
