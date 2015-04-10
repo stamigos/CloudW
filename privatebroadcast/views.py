@@ -34,7 +34,7 @@ def index(request, template_name="index.html"):
         if textField != u'':
             send_mail(checked, textField, 'cwitnesses@gmail.com',
                       ['4izmerenie.sammit2015@gmail.com'], fail_silently=False)
-    tasks = Task.video_multiple.objects.all()
+    tasks = Task.objects.all()
     return render_to_response(template_name, {
         'tasks': tasks,
     }, context_instance=RequestContext(request))
