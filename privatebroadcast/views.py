@@ -13,8 +13,10 @@ from .models import Task
 
 @login_required(login_url='/registration/register/')
 def index(request, template_name="index.html"):
-    if request.POST.get['lessons-r'].checked:
-        checked = 'Вопрос по урокам'
+    checked = ''
+    if request.POST:
+        if request.POST.get['lessons-r'].checked:
+            checked = 'Вопрос по урокам'
 
     tasks = Task.objects.all()
     return render_to_response(template_name, {
