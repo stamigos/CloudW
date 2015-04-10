@@ -53,7 +53,7 @@ def video_view(request, template_name="video.html", pk=None):
         if id == '4':
             checked = u'Свидетельство'
 
-        email = request.user.email
+        email = request.user.username
         textField += email + ':'
         textField += request.POST.get('textFIELD', '')
         if textField != u'':
