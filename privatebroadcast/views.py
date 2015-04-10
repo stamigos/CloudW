@@ -8,6 +8,7 @@ from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from multiuploader.forms import MultiUploadForm
+from django.core.mail import send_mail
 from .models import Task
 
 
@@ -15,15 +16,24 @@ from .models import Task
 def index(request, template_name="index.html"):
     checked = ''
     id = ''
+    textField = ''
     if request.POST:
         id = request.POST['rd']
-       # if id == 0:
-        #checked = 'Вопрос по урокам'
-
+        if id == 1:
+            checked = 'Вопрос по урокам'
+        if id == 2:
+            checked = 'Нужда'
+        if id == 3:
+            checked = 'Благодарность'
+        if id == 4:
+            checked = 'Свидетельство'
+    textField += checked + ':\n'
+    textField += request.POST['textFIELD'].value
+    send_mail(checked, textField, 'cwitnesses@gmail.com',
+              ['oldtigersvoice@gmail.com'], fail_silently=False)
     tasks = Task.objects.all()
     return render_to_response(template_name, {
         'tasks': tasks,
-        'checked': id
     }, context_instance=RequestContext(request))
 
 
