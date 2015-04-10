@@ -15,7 +15,7 @@ from .models import Task
 def index(request, template_name="index.html"):
     checked = ''
     if request.POST:
-        if request.POST.get['lessons-r']:
+        if request.POST['lessons-r'] == checked:
             checked = 'Вопрос по урокам'
 
     tasks = Task.objects.all()
