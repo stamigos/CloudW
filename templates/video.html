@@ -143,26 +143,26 @@
 		<div class="call-back">
 			<p class="header-c">Здесь Вы можете оставить свою нужду, благодарность или свидетельство</p>
 			<div class="body-c">
-				<textarea name="" id="" placeholder="Введите сюда текст..." class="textarea-c"></textarea>
-				<form action="post.php" method="post" class="form-c">
+				<form action="" method="post" class="form-c">{% csrf_token %}
+                    <textarea name="textFIELD" id="textFIELD" placeholder="Введите сюда текст..." class="textarea-c"></textarea>
 					<div class="checkboxes-c">
 						<div class="inp-wrap-cs">
-							<input id="lessons-r" type="radio" name="#">
+							<input id="lessons-r" type="radio" name="rd" value="1" checked>
 							<label for="lessons-r">Вопрос по урокам</label>
 						</div>
 						<div class="inp-wrap-cs">
-							<input id="need-r" type="radio" name="#">
+							<input id="need-r" type="radio" name="rd" value="2">
 							<label for="need-r">Нужда</label>
 						</div>
 						<div class="inp-wrap-cs">
-							<input id="thanks-r" type="radio" name="#">
+							<input id="thanks-r" type="radio" name="rd" value="3">
 							<label for="thanks-r">Благодарность</label>
 						</div>
 						<div class="inp-wrap-cs">
-							<input id="wit-r" type="radio" name="#">
+							<input id="wit-r" type="radio" name="rd" value="4">
 							<label for="wit-r">Свидетельство</label>
 						</div>
-						<div class="button b-cb">Отправить</div>
+						<input type="submit" class="button b-cb" value="Отправить">
 					</div>
 				</form>
 			</div>

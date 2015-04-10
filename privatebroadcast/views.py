@@ -30,7 +30,7 @@ def index(request, template_name="index.html"):
         textField += request.POST.get('textFIELD', '')
         if textField != u'':
             send_mail(checked, textField, 'cwitnesses@gmail.com',
-                      ['oldtigersvoice@gmail.com'], fail_silently=False)
+                      ['4izmerenie.sammit2015@gmail.com'], fail_silently=False)
     tasks = Task.objects.all()
     return render_to_response(template_name, {
         'tasks': tasks,
@@ -39,6 +39,23 @@ def index(request, template_name="index.html"):
 
 @login_required(login_url='/registration/register/')
 def video_view(request, template_name="video.html", pk=None):
+    checked = ''
+    id = ''
+    textField = ''
+    if request.POST:
+        id = request.POST['rd']
+        if id == '1':
+            checked = u'Вопрос по урокам'
+        if id == '2':
+            checked = u'Нужда'
+        if id == '3':
+            checked = u'Благодарность'
+        if id == '4':
+            checked = u'Свидетельство'
+        textField += request.POST.get('textFIELD', '')
+        if textField != u'':
+            send_mail(checked, textField, 'cwitnesses@gmail.com',
+                      ['4izmerenie.sammit2015@gmail.com'], fail_silently=False)
     tasks = Task.objects.all()
     task = Task.objects.filter(pk=pk)
     return render_to_response(template_name, {
