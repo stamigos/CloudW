@@ -44,7 +44,7 @@ INSTALLED_APPS = (
     'registration.contrib.autologin',
    # 'registration.supplements.default',
     'supplement_registration',
-    #'privatebroadcast',
+    'privatebroadcast',
     'multiuploader',
     #'djangoChat',
     'south',
