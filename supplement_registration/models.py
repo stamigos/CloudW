@@ -13,6 +13,7 @@ class MyRegistrationSupplement(RegistrationSupplementBase):
     city = models.CharField(u'Город', max_length=30) #help_text=u'Введите город')
     email = models.EmailField(u'Email', max_length=100) #help_text=u'Введите email')
     phone_number = PhoneNumberField(u'Телефон', max_length=30) #help_text=u'Введите свой телефон')
+    
 
     def __unicode__(self):
         # a summary of this supplement
