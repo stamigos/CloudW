@@ -14,6 +14,7 @@ from .models import Task
 @login_required(login_url='/registration/register/')
 def index(request, template_name="index.html"):
     checked = ''
+    id = ''
     if request.POST:
         id = request.POST['rd']
        # if id == 0:
