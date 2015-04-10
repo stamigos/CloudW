@@ -15,13 +15,14 @@ from .models import Task
 def index(request, template_name="index.html"):
     checked = ''
     if request.POST:
-        if request.POST['lessons-r'] == checked:
-            checked = 'Вопрос по урокам'
+        id = request.POST['rd']
+       # if id == 0:
+        #checked = 'Вопрос по урокам'
 
     tasks = Task.objects.all()
     return render_to_response(template_name, {
         'tasks': tasks,
-        'checked': checked
+        'checked': id
     }, context_instance=RequestContext(request))
 
 
