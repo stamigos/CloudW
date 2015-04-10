@@ -117,6 +117,12 @@ STATIC_URL = '/htdocs/'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'forcePasteAsPlainText': True
+    }
+}
+
 #STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),
 #)
