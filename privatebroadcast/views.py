@@ -20,13 +20,13 @@ def index(request, template_name="index.html"):
     if request.POST:
         id = request.POST['rd']
         if id == '1':
-            checked = 'Вопрос по урокам'
+            checked = u'Вопрос по урокам'
         if id == '2':
-            checked = 'Нужда'
+            checked = u'Нужда'
         if id == '3':
-            checked = 'Благодарность'
+            checked = u'Благодарность'
         if id == '4':
-            checked = 'Свидетельство'
+            checked = u'Свидетельство'
     textField += checked + ':\n'
     textField += request.POST.get('textFIELD', '')
     send_mail(checked, textField, 'cwitnesses@gmail.com',
