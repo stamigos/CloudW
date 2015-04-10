@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     #'djangoChat',
     'south',
     'gunicorn',
+    'ckeditor',
 )
 
 MIDDLEWARE_CLASSES = (

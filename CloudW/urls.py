@@ -31,6 +31,7 @@ urlpatterns = patterns('',
         name='registration_register'),
     url(r'^registration/logout/$', 'supplement_registration.views.logout_view', name='auth_logout'),
     url('^registration/', include('registration.urls')),
+    url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     #url(r'^chat/', include('djangoChat.urls')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
